@@ -1,6 +1,10 @@
 window.onload=function(){
 
 	var map1951 = L.map('map1951').setView([41, 13.5], 6);
+	var map1961 = L.map('map1951').setView([41, 13.5], 6);
+	var map1971 = L.map('map1951').setView([41, 13.5], 6);
+	var map1981 = L.map('map1951').setView([41, 13.5], 6);
+	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
 	
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
@@ -17,7 +21,7 @@ window.onload=function(){
 	    opacity: 1,
 	    fillOpacity: 0.8
 	};
-/*
+
 	$.ajax({
 	    type: "POST",
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
@@ -32,11 +36,6 @@ window.onload=function(){
 	        $("#info").fadeOut(500);
 	    }
 	});
-*/
-	$.getJSON("https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson",function (response) {
-	        geojsonLayer = L.geoJson(response,{
-	    		pointToLayer: function (feature, latlng) {
-	        		return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		}}
-		}).addTo(map1951);
+
+
 }
