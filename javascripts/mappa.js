@@ -33,7 +33,8 @@ window.onload=function(){
 	    }
 	});
 */
-	$.getJSON("https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson",{
+	$.getJSON("https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson",function (response) {
+	        geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		}
