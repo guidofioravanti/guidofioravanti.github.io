@@ -1,22 +1,14 @@
-window.onload=function(){
+function mappa51(){
 
 	var map1951 = L.map('map1951').setView([41, 13.5], 6);
-	var map1961 = L.map('map1961').setView([41, 13.5], 6);
-	var map1971 = L.map('map1971').setView([41, 13.5], 6);
-	var map1981 = L.map('map1981').setView([41, 13.5], 6);
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
 	
-	var myTile= L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
 	{
 		maxZoom: 13,
-		id: 'mapbox.light'
-	});
-	
-	myTile.addTo(map1951);
-	myTile.addTo(map1961);
-	myTile.addTo(map1971);
-	myTile.addTo(map1981);	
+		id: 'mapbox1951.light'
+	}).addTo(map1951);
 	
 	var geojsonMarkerOptions = {
 	    radius: 8,
@@ -42,6 +34,30 @@ window.onload=function(){
 	    }
 	});
 	
+
+};
+
+function mappa61(){
+
+	var map1961 = L.map('map1961').setView([41, 13.5], 6);
+	
+	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
+	
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	{
+		maxZoom: 13,
+		id: 'mapbox1961.light'
+	}).addTo(map1961);
+	
+	var geojsonMarkerOptions = {
+	    radius: 8,
+	    fillColor: "#ff7800",
+	    color: "#000",
+	    weight: 1,
+	    opacity: 1,
+	    fillOpacity: 0.8
+	};
+
 	$.ajax({
 	    type: "POST",
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1961.geojson',
@@ -55,7 +71,31 @@ window.onload=function(){
 	        map1961.fitBounds(geojsonLayer.getBounds());
 	        $("#info").fadeOut(500);
 	    }
-	});	
+	});
+	
+
+};
+
+function mappa71(){
+
+	var map1971 = L.map('map1981').setView([41, 13.5], 6);
+	
+	//L.tileLayer.provider('OpenTopoMap').addTo(map1981);
+	
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	{
+		maxZoom: 13,
+		id: 'mapbox1981.light'
+	}).addTo(map1971);
+	
+	var geojsonMarkerOptions = {
+	    radius: 8,
+	    fillColor: "#ff7800",
+	    color: "#000",
+	    weight: 1,
+	    opacity: 1,
+	    fillOpacity: 0.8
+	};
 
 	$.ajax({
 	    type: "POST",
@@ -72,6 +112,31 @@ window.onload=function(){
 	    }
 	});
 	
+
+};
+
+
+function mappa81(){
+
+	var map1981 = L.map('map1981').setView([41, 13.5], 6);
+	
+	//L.tileLayer.provider('OpenTopoMap').addTo(map1981);
+	
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	{
+		maxZoom: 13,
+		id: 'mapbox1981.light'
+	}).addTo(map1981);
+	
+	var geojsonMarkerOptions = {
+	    radius: 8,
+	    fillColor: "#ff7800",
+	    color: "#000",
+	    weight: 1,
+	    opacity: 1,
+	    fillOpacity: 0.8
+	};
+
 	$.ajax({
 	    type: "POST",
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1981.geojson',
@@ -85,7 +150,7 @@ window.onload=function(){
 	        map1981.fitBounds(geojsonLayer.getBounds());
 	        $("#info").fadeOut(500);
 	    }
-	});	
+	});
+	
 
-
-}
+};
