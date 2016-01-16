@@ -17,7 +17,7 @@ window.onload=function(){
 	    opacity: 1,
 	    fillOpacity: 0.8
 	};
-
+/*
 	$.ajax({
 	    type: "POST",
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
@@ -32,5 +32,10 @@ window.onload=function(){
 	        $("#info").fadeOut(500);
 	    }
 	});
-
+*/
+	$.getJSON("https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson",{
+	    		pointToLayer: function (feature, latlng) {
+	        		return L.circleMarker(latlng, geojsonMarkerOptions);
+	    		}
+		}).addTo(map1951);
 }
