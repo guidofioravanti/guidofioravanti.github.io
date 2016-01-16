@@ -9,13 +9,25 @@ window.onload=function(){
 		id: 'mapbox.light'
 	}).addTo(map1951);
 	
+	var geojsonMarkerOptions = {
+	    radius: 8,
+	    fillColor: "#ff7800",
+	    color: "#000",
+	    weight: 1,
+	    opacity: 1,
+	    fillOpacity: 0.8
+	};
 
 	$.ajax({
 	    type: "POST",
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
 	    dataType: 'json',
 	    success: function (response) {
-	        geojsonLayer = L.geoJson(response).addTo(map1951);
+	        geojsonLayer = L.geoJson(response,{
+	    		pointToLayer: function (feature, latlng) {
+	        		return L.circleMarker(latlng, geojsonMarkerOptions);
+	    		}
+		}).addTo(map1951);
 	        map1951.fitBounds(geojsonLayer.getBounds());
 	        $("#info").fadeOut(500);
 	    }
