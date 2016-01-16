@@ -9,7 +9,7 @@ window.onload=function(){
 	    dataType: 'json',
 	    success: function (response) {
 	        geojsonLayer = L.geoJson(response).addTo(map1951);
-	        map.fitBounds(geojsonLayer.getBounds());
+	        map1951.fitBounds(geojsonLayer.getBounds());
 	        $("#info").fadeOut(500);
 	    }
 	});
