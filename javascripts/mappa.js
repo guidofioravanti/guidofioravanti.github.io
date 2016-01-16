@@ -37,6 +37,6 @@ window.onload=function(){
 	        geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		}
+	    		}}
 		}).addTo(map1951);
 }
