@@ -6,12 +6,8 @@ window.onload=function(){
 
 	var topoLayer = new L.TopoJSON();
 
-	$.getJSON('https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson').done(addTopoData);
+	$.getJSON('https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson').addTo(map1951);
 
-	function addTopoData(topoData){  
-	  topoLayer.addData(topoData);
-	  topoLayer.addTo(map1951);
-	}
 
 
 }
