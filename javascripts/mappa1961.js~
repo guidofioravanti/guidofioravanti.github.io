@@ -4,13 +4,11 @@ window.onload=function(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
 	
-	var myTile= L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
 	{
 		maxZoom: 13,
-		id: 'mapbox.light'
-	});
-	
-	myTile.addTo(map1961);
+		id: 'mapbox1961.light'
+	}).addTo(map1961);
 	
 	var geojsonMarkerOptions = {
 	    radius: 8,

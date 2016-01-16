@@ -1,4 +1,4 @@
-window.onload=function(){
+({
 
 	var map1961 = L.map('map1961').setView([41, 13.5], 6);
 	
@@ -35,4 +35,4 @@ window.onload=function(){
 	});
 	
 
-}
+})
