@@ -2,6 +2,12 @@ window.onload=function(){
 
 	var map1951 = L.map('map1951').setView([41, 13.5], 6);
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
+	
+	L.tileLayer(
+	    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    maxZoom: 13
+	}).addTo(map1951);
+	
 
 	$.ajax({
 	    type: "POST",
