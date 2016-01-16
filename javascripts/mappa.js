@@ -9,7 +9,7 @@ window.onload=function(){
 				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 			id: 'mapbox.light'
-		}).addTo(map);
+		}).addTo(map1951);
 	
 
 	$.ajax({
