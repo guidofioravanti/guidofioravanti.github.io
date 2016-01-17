@@ -21,7 +21,7 @@ function mappa51(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
 	
-	myTile51.addTo(map1951);
+	myTile.addTo(map1951);
 	
 	$.ajax({
 	    type: "POST",
