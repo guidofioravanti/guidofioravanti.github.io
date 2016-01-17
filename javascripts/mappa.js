@@ -5,8 +5,6 @@ var myTile=L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?acc
 		attribution: 'Elaborazione dati ISPRA',	
 	});
 
-var myTile51=myTile;
-	
 var geojsonMarkerOptions = {
 	    radius: 8,
 	    fillColor: "#ff7800",
@@ -33,10 +31,6 @@ function mappa51(){
 	        geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		},
-	    		onEachFeature: function(feature,layer){
-	    			layer.bindPopup(feature.properties.SiteName);	
-	    			return layer;
 	    		}
 		}).addTo(map1951);
 	        map1951.fitBounds(geojsonLayer.getBounds());
