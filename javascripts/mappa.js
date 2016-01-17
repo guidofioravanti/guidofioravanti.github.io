@@ -32,7 +32,7 @@ function mappa51(){
 	    		pointToLayer: function (feature, latlng) {
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
-	    		onEachFeature: (feature, layer) {
+	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
 		}).addTo(map1951);
@@ -67,9 +67,9 @@ function mappa61(){
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
 	    		onEachFeature: function (feature, layer) {
-                		layer.bindPopup(feature.properties.SiteName);
-        		}
-		}).addTo(map1961);
+				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);        		}
+	        	}
+	        }).addTo(map1961);
 	        map1961.fitBounds(geojsonLayer.getBounds());
 	        $("#info").fadeOut(500);
 	    }
@@ -101,7 +101,7 @@ function mappa71(){
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
 	    		onEachFeature: function (feature, layer) {
-                		layer.bindPopup(feature.properties.SiteName);
+				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
         		}
 		}).addTo(map1971);
 	        map1971.fitBounds(geojsonLayer.getBounds());
@@ -138,7 +138,7 @@ function mappa81(){
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
 	    		onEachFeature: function (feature, layer) {
-                		layer.bindPopup(feature.properties.SiteName);
+				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
         		}
 		}).addTo(map1981);
 	        map1981.fitBounds(geojsonLayer.getBounds());
