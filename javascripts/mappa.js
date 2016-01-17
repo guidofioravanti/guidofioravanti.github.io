@@ -1,6 +1,13 @@
+function getValue(x){
+	
+	return x<=2500 ? "#000" : "#FFF";
+	
+}
+
+
 var geojsonMarkerOptions = {
 	    radius: 8,
-	    fillColor: "#ff7800",
+	    fillColor: getValue(feature.properties.normale),
 	    color: "#000",
 	    weight: 1,
 	    opacity: 1,
