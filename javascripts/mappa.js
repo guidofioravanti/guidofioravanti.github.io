@@ -4,6 +4,8 @@ var myTile=L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?acc
 		id: 'mapbox.light',
 		attribution: 'Elaborazione dati ISPRA',	
 	});
+
+var myTile51=myTile;
 	
 var geojsonMarkerOptions = {
 	    radius: 8,
@@ -21,7 +23,7 @@ function mappa51(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
 	
-	myTile.addTo(map1951);
+	myTile51.addTo(map1951);
 	
 	$.ajax({
 	    type: "POST",
