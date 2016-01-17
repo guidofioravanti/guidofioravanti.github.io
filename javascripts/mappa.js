@@ -34,6 +34,7 @@ function mappa51(){
 	    		},
 	    		onEachFeature: function(feature,layer){
 	    			layer.bindPopup(feature.properties.SiteName);	
+	    			return layer;
 	    		}
 		}).addTo(map1951);
 	        map1951.fitBounds(geojsonLayer.getBounds());
