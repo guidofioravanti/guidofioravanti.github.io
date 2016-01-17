@@ -4,6 +4,22 @@ function getValue(x){
 	
 }
 
+function stilePunti(feature, latlng) {
+	    			
+	var geojsonMarkerOptions = {
+		    radius: 8,
+		    fillColor: function(feature.properties.normale){return x<=2500 ? "#A00" : "#FFF"},
+		    color: "#000",
+		    weight: 1,
+		    opacity: 1,
+		    fillOpacity: 0.8,
+		    clickable: true	
+		};	    			
+	    			
+    	return L.circleMarker(latlng, geojsonMarkerOptions);
+	
+}
+
 
 var geojsonMarkerOptions = {
 	    radius: 8,
@@ -34,20 +50,7 @@ function mappa51(){
 	    dataType: 'json',
 	    success: function (response) {
 	        geojsonLayer = L.geoJson(response,{
-	    		pointToLayer: function (feature, latlng) {
-	    			
-var geojsonMarkerOptions = {
-	    radius: 8,
-	    fillColor: getValue(feature.properties.normale),
-	    color: "#000",
-	    weight: 1,
-	    opacity: 1,
-	    fillOpacity: 0.8,
-	    clickable: true	
-	};	    			
-	    			
-	        		return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		},
+	    		pointToLayer: stilePunti(feature, latlng),
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
