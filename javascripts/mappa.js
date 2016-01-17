@@ -8,7 +8,7 @@ function stilePunti(feature, latlng) {
 	    			
 	var geojsonMarkerOptions = {
 		    radius: 8,
-		    fillColor: function(feature.properties.normale){return x<=2500 ? "#A00" : "#FFF"},
+		    fillColor: getValue(feature.properties.normale),
 		    color: "#000",
 		    weight: 1,
 		    opacity: 1,
