@@ -1,10 +1,3 @@
-var myTile=L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
-	{
-		maxZoom: 13,
-		id: 'mapbox.light',
-		attribution: 'Elaborazione dati ISPRA',	
-	});
-
 var geojsonMarkerOptions = {
 	    radius: 8,
 	    fillColor: "#ff7800",
@@ -21,7 +14,12 @@ function mappa51(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
 	
-	myTile.addTo(map1951);
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	{
+		maxZoom: 13,
+		id: 'mapbox.light',
+		attribution: 'Elaborazione dati ISPRA',	
+	}).addTo(map1951);
 	
 	$.ajax({
 	    type: "POST",
@@ -47,7 +45,12 @@ function mappa61(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
 	
-	myTile.addTo(map1961);
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	{
+		maxZoom: 13,
+		id: 'mapbox.light',
+		attribution: 'Elaborazione dati ISPRA',	
+	}).addTo(map1961);
 	
 	$.ajax({
 	    type: "POST",
@@ -73,7 +76,12 @@ function mappa71(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1981);
 	
-	myTile.addTo(map1971);
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	{
+		maxZoom: 13,
+		id: 'mapbox.light',
+		attribution: 'Elaborazione dati ISPRA',	
+	}).addTo(map1971);
 	
 	$.ajax({
 	    type: "POST",
@@ -100,7 +108,12 @@ function mappa81(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1981);
 	
-	myTile.addTo(map1981);
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	{
+		maxZoom: 13,
+		id: 'mapbox.light',
+		attribution: 'Elaborazione dati ISPRA',	
+	}).addTo(map1981);
 	
 
 
