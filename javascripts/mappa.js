@@ -65,7 +65,7 @@ function mappa61(){
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
 	    		onEachFeature: function (feature, layer) {
-				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);        		}
+				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 	        	}
 	        }).addTo(map1961);
 	        map1961.fitBounds(geojsonLayer.getBounds());
