@@ -34,7 +34,7 @@ function mappa51(){
 	    		pointToLayer: function (feature, latlng) {
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
-	    		onEachFeature: myEach()
+	    		onEachFeature: myEach(feature, layer)
 		}).addTo(map1951);
 	        map1951.fitBounds(geojsonLayer.getBounds());
 	        $("#info").fadeOut(500);
