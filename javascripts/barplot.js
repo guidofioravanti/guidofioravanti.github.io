@@ -1,4 +1,4 @@
-$(function () {
+function mybarplot() {
     $('#container').highcharts({
         chart: {
             type: 'bar'
@@ -42,4 +42,4 @@ $(function () {
   }
 ]
     });
-});
+}
