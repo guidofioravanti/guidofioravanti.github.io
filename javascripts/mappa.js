@@ -31,6 +31,9 @@ function mappa51(){
 	        geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
+	    		},
+	    		onEachFeature: function(feature,layer){
+	    			layer.bindPopup(feature.properties.SiteName);	
 	    		}
 		}).addTo(map1951);
 	        map1951.fitBounds(geojsonLayer.getBounds());
