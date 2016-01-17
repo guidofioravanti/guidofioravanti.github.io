@@ -1,6 +1,6 @@
 window.onload=function(){
 	
-	$(function () {
+	function () {
     $('#container').highcharts({
         chart: {
             type: 'bar'
@@ -44,7 +44,7 @@ window.onload=function(){
   }
 ]
     });
-});
+}
 	
 
 	mappa51();
