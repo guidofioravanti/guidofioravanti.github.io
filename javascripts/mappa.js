@@ -7,7 +7,7 @@ function getValue(x){
 
 var geojsonMarkerOptions = {
 	    radius: 8,
-	    fillColor: getValue(feature.properties.normale),
+	    fillColor: "#012",
 	    color: "#000",
 	    weight: 1,
 	    opacity: 1,
@@ -35,6 +35,17 @@ function mappa51(){
 	    success: function (response) {
 	        geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
+	    			
+var geojsonMarkerOptions = {
+	    radius: 8,
+	    fillColor: getValue(feature.properties.normale),
+	    color: "#000",
+	    weight: 1,
+	    opacity: 1,
+	    fillOpacity: 0.8,
+	    clickable: true	
+	};	    			
+	    			
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
 	    		onEachFeature: function (feature, layer) {
