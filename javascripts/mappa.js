@@ -7,6 +7,10 @@ var geojsonMarkerOptions = {
 	    fillOpacity: 0.8,
 	    clickable: true	
 	};	
+	
+function myEach(feature, layer) {
+        layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
+}	
 
 function mappa51(){
 
@@ -30,9 +34,7 @@ function mappa51(){
 	    		pointToLayer: function (feature, latlng) {
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
-	    		onEachFeature: function (feature, layer) {
-                		layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
-        		}
+	    		onEachFeature: myEach()
 		}).addTo(map1951);
 	        map1951.fitBounds(geojsonLayer.getBounds());
 	        $("#info").fadeOut(500);
