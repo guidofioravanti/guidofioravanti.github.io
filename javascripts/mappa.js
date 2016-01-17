@@ -2,7 +2,7 @@ var myTile=L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?acc
 	{
 		maxZoom: 13,
 		id: 'mapbox.light',
-		attribution: 'Elaborazione dati ISPRA'	
+		attribution: 'Elaborazione dati ISPRA',	
 	});
 
 function mappa51(){
