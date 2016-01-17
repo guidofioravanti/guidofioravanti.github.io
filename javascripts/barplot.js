@@ -1,4 +1,5 @@
 function mybarplot() {
+    
     $('#container').highcharts({
         chart: {
             type: 'bar'
