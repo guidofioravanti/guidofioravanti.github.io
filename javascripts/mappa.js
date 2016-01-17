@@ -7,7 +7,7 @@ function mappa51(){
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
 	{
 		maxZoom: 13,
-		id: 'mapbox1951.light'
+		id: 'mapbox.light'
 	}).addTo(map1951);
 	
 	var geojsonMarkerOptions = {
@@ -46,7 +46,7 @@ function mappa61(){
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
 	{
 		maxZoom: 13,
-		id: 'mapbox1961.light'
+		id: 'mapbox.light'
 	}).addTo(map1961);
 	
 	var geojsonMarkerOptions = {
@@ -85,7 +85,7 @@ function mappa71(){
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
 	{
 		maxZoom: 13,
-		id: 'mapbox1971.light'
+		id: 'mapbox.light'
 	}).addTo(map1971);
 	
 	var geojsonMarkerOptions = {
@@ -125,7 +125,7 @@ function mappa81(){
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
 	{
 		maxZoom: 13,
-		id: 'mapbox1981.light'
+		id: 'mapbox.light'
 	}).addTo(map1981);
 	
 	var geojsonMarkerOptions = {
