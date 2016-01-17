@@ -29,7 +29,10 @@ function mappa51(){
 	        geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		}
+	    		},
+	    		onEachFeature: function (feature, layer) {
+                		layer.bindPopup(feature.properties.SiteName);
+        		}
 		}).addTo(map1951);
 	        map1951.fitBounds(geojsonLayer.getBounds());
 	        $("#info").fadeOut(500);
@@ -60,7 +63,10 @@ function mappa61(){
 	        geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		}
+	    		},
+	    		onEachFeature: function (feature, layer) {
+                		layer.bindPopup(feature.properties.SiteName);
+        		}
 		}).addTo(map1961);
 	        map1961.fitBounds(geojsonLayer.getBounds());
 	        $("#info").fadeOut(500);
@@ -91,7 +97,10 @@ function mappa71(){
 	        geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		}
+	    		},
+	    		onEachFeature: function (feature, layer) {
+                		layer.bindPopup(feature.properties.SiteName);
+        		}
 		}).addTo(map1971);
 	        map1971.fitBounds(geojsonLayer.getBounds());
 	        $("#info").fadeOut(500);
@@ -125,7 +134,10 @@ function mappa81(){
 	        geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
 	        		return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		}
+	    		},
+	    		onEachFeature: function (feature, layer) {
+                		layer.bindPopup(feature.properties.SiteName);
+        		}
 		}).addTo(map1981);
 	        map1981.fitBounds(geojsonLayer.getBounds());
 	        $("#info").fadeOut(500);
