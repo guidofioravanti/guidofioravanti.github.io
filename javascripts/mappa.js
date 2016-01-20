@@ -71,6 +71,7 @@ function mappa51(){
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
 	    dataType: 'json',
 	    success: function (response) {
+	    	debugger;
 	    	console.log(L.geoJson(response));
 	    	var numeroPunti=L.geoJson(response).features.length;
 	        geojsonLayer = L.geoJson(response,opzioniPunti).addTo(map1951);
