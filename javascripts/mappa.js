@@ -5,7 +5,8 @@ var geojsonMarkerOptions = {
 	    weight: 1,
 	    opacity: 1,
 	    fillOpacity: 0.8,
-	    clickable: true	
+	    clickable: true,
+	    riseHonHover: true
 	};	
 	
 // confini per l'Italia
