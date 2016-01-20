@@ -74,7 +74,7 @@ function mappa51(){
 
 	    	console.log(L.geoJson(response));
 	    	var myGJ=L.geoJson(response,opzioniPunti);
-	    	var numeroPunti= geoJson.getLayers().length;
+	    	var numeroPunti= myGJ.getLayers().length;
 	        var geojsonLayer = myGJ.addTo(map1951);
 	        var markerClusters = L.markerClusterGroup();
 		
