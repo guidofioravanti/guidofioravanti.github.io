@@ -73,13 +73,12 @@ function mappa51(){
 	    dataType: 'json',
 	    success: function (response) {
 
+	    	var geojsonLayer=L.geoJson(response,opzioniPunti);
+	    	
 	        var markerClusters = L.markerClusterGroup({
 	        	showCoverageOnHover: false
-	        });
+	        });	    	
 
-	    	var geojsonLayer=L.geoJson(response,opzioniPunti);
-
-	        markerClusters.addLayer(geojsonLayer);
 	        map1951.addLayer(markerClusters).fitBounds(geojsonLayer.getBounds());
 	    }
 	});
