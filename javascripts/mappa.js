@@ -46,7 +46,7 @@ function mappa51(){
 	    		style: function(feature){
 	    			
 	        	    	if(parseFloat(feature.properties.normale)<= 2000){
-	    				return {fillColor: ""#ABA123"};
+	    				return {fillColor: "#ABA123"};
 	        	    	}else{
 	    				return {fillColor: "#AAA"};
 			    	}
