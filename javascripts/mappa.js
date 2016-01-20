@@ -21,6 +21,10 @@ var geojsonMarkerOptions = {
 	};
 	
 var opzioniPunti= {
+		    	pointToLayer: function(feature, latlng) {
+	    			   	return L.marker(latlng); //, geojsonMarkerOptions
+	    			   	//return L.circleMarker(latlng, geojsonMarkerOptions);
+	    		},
 
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
@@ -47,9 +51,7 @@ function mappa51(){
 	    dataType: 'json',
 	    success: function (response) {
 
-	        var markerClusters = L.markerClusterGroup({
-	        	showCoverageOnHover: false
-	        });	
+	        var markerClusters = L.markerClusterGroup();	
 
 	    	var geojsonLayer=L.geoJson(response,opzioniPunti);
 
