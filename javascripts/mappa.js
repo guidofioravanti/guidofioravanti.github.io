@@ -8,20 +8,6 @@ var geojsonMarkerOptions = {
 	    clickable: true
 	};
 	
-function scegliColore(x){
-	    			
-	    	if(parseFloat(x.properties.normale)<= 500){
-   				return {fillColor: "#ABA123"};
-       	    	}else if(x.properties.normale > 500 && x.properties.normale<=1000) {
-    				return {fillColor: "#A12AA2"};
-	    	}else{
-    				return {fillColor: "#212AA2"};	    		
-	    	}
-	
-};	
-	
-		
-	
 // confini per l'Italia
 var bound1= L.latLng(36, 5);
 var bound2= L.latLng(48,20);
@@ -57,9 +43,9 @@ function mappa51(){
 	    		},
 	    		style: function(feature){
 	    			
-			    	if(parseFloat(x.properties.normale)<= 500){
+			    	if(parseFloat(feature.properties.normale)<= 500){
 		   				return {fillColor: "#ABA123"};
-		       	    	}else if(x.properties.normale > 500 && x.properties.normale<=1000) {
+		       	    	}else if(feature.properties.normale > 500 && x.properties.normale<=1000) {
 		    				return {fillColor: "#A12AA2"};
 			    	}else{
 		    				return {fillColor: "#212AA2"};	    		
