@@ -46,7 +46,6 @@ function mappa51(){
 			}	
 		}).addTo(map1951);
 	        map1951.fitBounds(geojsonLayer.getBounds());
-		$("map1951").fadeOut(500);
 	    }
 	});
 	
@@ -79,7 +78,7 @@ function mappa61(){
 	        	}
 	        }).addTo(map1961);
 	        map1961.fitBounds(geojsonLayer.getBounds());
-	        $("#info").fadeOut(500);
+
 	    }
 	});
 	
@@ -113,7 +112,7 @@ function mappa71(){
         		}
 		}).addTo(map1971);
 	        map1971.fitBounds(geojsonLayer.getBounds());
-	        $("#info").fadeOut(500);
+
 	    }
 	});
 	
@@ -150,7 +149,7 @@ function mappa81(){
         		}
 		}).addTo(map1981);
 	        map1981.fitBounds(geojsonLayer.getBounds());
-	        $("#info").fadeOut(500);
+
 	    }
 	});
 	
