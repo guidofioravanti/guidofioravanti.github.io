@@ -55,7 +55,7 @@ function mappa51(){
 	    				return("#000");
 	        	    }else{
 	    				return("#AAA");
-			    };
+			    }
 	    		},
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
