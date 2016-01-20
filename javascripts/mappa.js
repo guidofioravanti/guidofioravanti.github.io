@@ -16,8 +16,8 @@ var italyBounds=L.latLngBounds(bound1, bound2);
 function mappa51(){
 
 	var map1951 = L.map('map1951',{
-		crs=L.CRS.EPSG4326,
-		maxBounds=italyBounds
+		crs: L.CRS.EPSG4326,
+		maxBounds: italyBounds
 	});
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
