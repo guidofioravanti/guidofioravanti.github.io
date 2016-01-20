@@ -48,7 +48,7 @@ var opzioniPunti= {
 		    				
 			}, //fine style
 	    		onEachFeature: function (feature, layer) {
-	    			   var marker = L.marker(feature.properties.latitude,feature.properties.longitude ]);
+	    			   var marker = L.marker([feature.properties.latitude,feature.properties.longitude ]);
 	    			   marker.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 	    			   return marker; 
 				 //layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
