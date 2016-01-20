@@ -10,10 +10,6 @@ var geojsonMarkerOptionsOrig = {
 	
 var geojsonMarkerOptions = {
 	    radius: 8,
-	    fillColor: switch(feature.properties.normale){
-	    	case <=2000: return("#000");
-	    	case >=2001: return("#AAA");
-	    },
 	    color: "#000",
 	    weight: 1,
 	    opacity: 1,
@@ -54,6 +50,12 @@ function mappa51(){
 	    		pointToLayer: function(feature, latlng) {
 	    			   	return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
+	    		style: function(feature){
+	        	    fillColor: switch(feature.properties.normale){
+	    			case <= 2000: return("#000");
+	    			case >= 2001: return("#AAA");
+			     },
+	    		}
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
