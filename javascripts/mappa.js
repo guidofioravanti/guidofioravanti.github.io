@@ -8,8 +8,7 @@ var geojsonMarkerOptions = {
 	    clickable: true	
 	};	
 	
-	.fitBounds([[36,5],[[48,20]]]);
-	
+// confini per l'Italia
 var bound1= L.latLng(36, 5);
 var bound2= L.latLng(48,20);
 var italyBounds=L.latLngBounds(bound1, bound2);
