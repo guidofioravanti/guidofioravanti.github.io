@@ -45,7 +45,7 @@ function mappa51(){
 	    			
 			    	if(parseFloat(feature.properties.normale)<= 500){
 		   				return {fillColor: "#ABA123"};
-		       	    	}else if(feature.properties.normale > 500 && x.properties.normale<=1000) {
+		       	    	}else if(feature.properties.normale > 500 && feature.properties.normale<=1000) {
 		    				return {fillColor: "#A12AA2"};
 			    	}else{
 		    				return {fillColor: "#212AA2"};	    		
