@@ -61,7 +61,6 @@ function mappa61(){
 	
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
 	{
-		maxZoom: 13,
 		id: 'mapbox.light',
 		attribution: 'Elaborazione dati ISPRA',	
 	}).addTo(map1961);
