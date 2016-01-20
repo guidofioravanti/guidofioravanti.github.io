@@ -48,7 +48,10 @@ var opzioniPunti= {
 		    				
 			}, //fine style
 	    		onEachFeature: function (feature, layer) {
-				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
+	    			   var marker = L.marker( [punti[i].feature.properties.latitude,punti[i].feature.properties.longitude ]);
+	    			   marker.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
+	    			   return marker; 
+				 //layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
 		}; //fine oggetto opzioni	
 	
@@ -73,28 +76,13 @@ function mappa51(){
 	    success: function (response) {
 
 	    	console.log(L.geoJson(response));
-	    	var myGJ=L.geoJson(response,opzioniPunti);
-	        var geojsonLayer = myGJ.addTo(map1951);
+	    	var geojsonLayer=L.geoJson(response,opzioniPunti).addTo(map1951);
+
 	        var markerClusters = L.markerClusterGroup({
 	        	showCoverageOnHover: false, 
 			disableClusteringAtZoom: 20	        	
 	        });
 	        
-	        var punti= myGJ.getLayers();
-		
-		for(i=0;i< punti.length;i++){
-			  
-			  var titolo=punti[i].feature.properties.regione;
-			  
-			  var m = L.marker( [punti[i].feature.properties.latitude,punti[i].feature.properties.longitude ],{
-			  	title: titolo
-			  });
-			  m.bindPopup(titolo);
-
-  			markerClusters.addLayer( m );
-			
-		}//fine ciclo for
-		
 	        map1951.addLayer(markerClusters);
 	        map1951.fitBounds(geojsonLayer.getBounds());
 	    }
