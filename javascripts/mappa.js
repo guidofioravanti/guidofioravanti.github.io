@@ -79,7 +79,8 @@ function mappa51(){
 	        	showCoverageOnHover: false
 	        });	    	
 
-	        map1951.addLayer(markerClusters).fitBounds(geojsonLayer.getBounds());
+		markerClusters.addLayer(geojsonLayer);
+	        map1951.addLayer(markerClusters));
 	    }
 	});
 	
