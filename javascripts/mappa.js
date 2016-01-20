@@ -50,10 +50,10 @@ function mappa51(){
 	    			   	return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
 	    		style: function(feature){
-	        	    color: if(parseFloat(feature.properties.normale)<= 2000){
-	    				return("#000");
+	        	    if(parseFloat(feature.properties.normale)<= 2000){
+	    				return {color: "#000"};
 	        	    }else{
-	    				return("#AAA");
+	    				return {color: "#AAA"};
 			    }
 	    		},
 	    		onEachFeature: function (feature, layer) {
