@@ -45,8 +45,8 @@ function mappa51(){
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
 		}).addTo(map1951);
-	        //map1951.fitBounds(geojsonLayer.getBounds());
-	        $("#info").fadeOut(500);
+	        map1951.fitBounds(geojsonLayer.getBounds());
+	
 	    }
 	});
 	
