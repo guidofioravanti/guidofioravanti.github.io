@@ -10,7 +10,6 @@ var geojsonMarkerOptionsOrig = {
 	
 var geojsonMarkerOptions = {
 	    radius: 8,
-	    color: "#000",
 	    weight: 1,
 	    opacity: 1,
 	    fillOpacity: 0.8,
@@ -51,7 +50,7 @@ function mappa51(){
 	    			   	return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
 	    		style: function(feature){
-	        	    fillColor: if(feature.properties.normale<= 2000){
+	        	    color: if(feature.properties.normale<= 2000){
 	    				return("#000");
 	        	    }else{
 	    				return("#AAA");
