@@ -12,12 +12,16 @@ var geojsonMarkerOptions = {
 var bound1= L.latLng(36, 5);
 var bound2= L.latLng(48,20);
 var italyBounds=L.latLngBounds(bound1, bound2);
+
+//opzioni mappa
+var opzioniExt={
+	maxBounds: italyBounds
+	
+	};
 	
 function mappa51(){
 
-	var map1951 = L.map('map1951',{
-		maxBounds: italyBounds
-	});
+	var map1951 = L.map('map1951',opzioniExt);
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
 	
@@ -51,7 +55,7 @@ function mappa51(){
 
 function mappa61(){
 
-	var map1961 = L.map('map1961').setView([41, 13.5], 6);
+	var map1961 = L.map('map1961',opzioniExt);
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
 	
