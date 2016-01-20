@@ -73,7 +73,7 @@ function mappa51(){
 	    dataType: 'json',
 	    success: function (response) {
 
-	        var markerClusters = new L.markerClusterGroup({
+	        var markerClusters = L.markerClusterGroup({
 	        	showCoverageOnHover: false
 	        });	
 
