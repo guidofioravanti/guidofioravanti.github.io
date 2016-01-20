@@ -87,7 +87,7 @@ function mappa51(){
 			  var titolo=punti[i].feature.properties.regione;
 			  
 			  var m = L.marker( [punti[i].feature.properties.latitude,punti[i].feature.properties.longitude ],{
-			  	title: titolo;
+			  	title: titolo
 			  });
 			  m.bindPopup(titolo);
 
