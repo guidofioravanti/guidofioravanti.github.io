@@ -8,9 +8,18 @@ var geojsonMarkerOptions = {
 	    clickable: true	
 	};	
 	
+	.fitBounds([[36,5],[[48,20]]]);
+	
+var bound1= L.latLng(36, 5);
+var bound2= L.latLng(48,20);
+var italyBounds=L.latLngBounds(bound1, bound2);
+	
 function mappa51(){
 
-	var map1951 = L.map('map1951',crs=L.CRS.EPSG4326).fitBounds([[36,5],[[48,20]]]);
+	var map1951 = L.map('map1951',{
+		crs=L.CRS.EPSG4326,
+		maxBounds=italyBounds
+	});
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
 	
