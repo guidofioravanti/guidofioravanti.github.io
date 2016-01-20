@@ -80,7 +80,7 @@ function mappa51(){
 	        });	    	
 
 		markerClusters.addLayer(geojsonLayer);
-	        map1951.addLayer(markerClusters));
+	        map1951.addLayer(markerClusters);
 	    }
 	});
 	
