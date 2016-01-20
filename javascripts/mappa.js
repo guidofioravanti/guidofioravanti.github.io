@@ -75,7 +75,10 @@ function mappa51(){
 	    	console.log(L.geoJson(response));
 	    	var myGJ=L.geoJson(response,opzioniPunti);
 	        var geojsonLayer = myGJ.addTo(map1951);
-	        var markerClusters = L.markerClusterGroup({showCoverageOnHover: false });
+	        var markerClusters = L.markerClusterGroup({
+	        	showCoverageOnHover: false, 
+			disableClusteringAtZoom: 14	        	
+	        });
 	        
 	        var punti= myGJ.getLayers();
 		
