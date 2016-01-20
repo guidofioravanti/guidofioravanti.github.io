@@ -1,13 +1,3 @@
-var geojsonMarkerOptions = {
-	    radius: 8,
-	    //fillColor: "#ABA123",
-	    weight: 0.7,
-	    color: "#CCC",
-	    opacity: 1,
-	    fillOpacity: 1,
-	    clickable: true
-	};
-	
 // confini per l'Italia
 var bound1= L.latLng(36, 5);
 var bound2= L.latLng(48,20);
@@ -17,6 +7,17 @@ var italyBounds=L.latLngBounds(bound1, bound2);
 var opzioniExt={
 	maxBounds: italyBounds
 	
+	};
+
+//opzioni Markers
+var geojsonMarkerOptions = {
+	    radius: 8,
+	    //fillColor: "#ABA123",
+	    weight: 0.7,
+	    color: "#CCC",
+	    opacity: 1,
+	    fillOpacity: 1,
+	    clickable: true
 	};
 	
 var opzioniPunti= {
@@ -49,7 +50,7 @@ var opzioniPunti= {
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
-		}; //fine oggetto	
+		}; //fine oggetto opzioni	
 	
 	
 function mappa51(){
@@ -71,7 +72,9 @@ function mappa51(){
 	    dataType: 'json',
 	    success: function (response) {
 	        geojsonLayer = L.geoJson(response,opzioniPunti).addTo(map1951);
-	        map1951.fitBounds(geojsonLayer.getBounds());
+	        var markers = L.markerClusterGroup();
+	        map1951.addLayer(markers);
+	        map1951.fitBounds(narkers.getBounds());
 	    }
 	});
 	
