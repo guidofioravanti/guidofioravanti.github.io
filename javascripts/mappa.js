@@ -6,7 +6,19 @@ var geojsonMarkerOptions = {
 	    opacity: 1,
 	    fillOpacity: 0.8,
 	    clickable: true
-	};	
+	};
+	
+function scegliColore(x){
+	    			
+	    	if(parseFloat(x.properties.normale)<= 500){
+   				return {fillColor: "#ABA123"};
+       	    	}else if(x.properties.normale > 500 && x.properties.normale<=1000) {
+    				return {fillColor: "#A12AA2"};
+	    	}else{
+    				return {fillColor: "#212AA2"};	    		
+	    	}
+	
+};	
 	
 		
 	
@@ -43,14 +55,7 @@ function mappa51(){
 	    		pointToLayer: function(feature, latlng) {
 	    			   	return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
-	    		style: function(feature){
-	    			
-	        	    	if(parseFloat(feature.properties.normale)<= 2000){
-	    				return {fillColor: "#ABA123"};
-	        	    	}else{
-	    				return {fillColor: "#AAA"};
-			    	}
-	    		}, //fine style
+	    		style: scegliColore(feature), //fine style
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
