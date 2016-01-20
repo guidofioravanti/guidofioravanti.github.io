@@ -22,7 +22,7 @@ var geojsonMarkerOptions = {
 	
 var opzioniPunti= {
 	    		pointToLayer: function(feature, latlng) {
-	    			   	return L.marker(latlng,geojsonMarkerOptions);
+	    			   	return L.marker(latlng); //, geojsonMarkerOptions
 	    			   	//return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
 	    		style: function(feature){
