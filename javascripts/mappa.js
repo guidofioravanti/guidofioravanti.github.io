@@ -73,7 +73,6 @@ function mappa51(){
 	    dataType: 'json',
 	    success: function (response) {
 
-	    	console.log(L.geoJson(response));
 	    	var geojsonLayer=L.geoJson(response,opzioniPunti).addTo(map1951);
 
 	        var markerClusters = L.markerClusterGroup({
