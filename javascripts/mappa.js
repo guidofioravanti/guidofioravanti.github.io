@@ -79,7 +79,7 @@ function mappa51(){
 	        var markerClusters = L.markerClusterGroup();
 		
 		for(i=0;i< numeroPunti;i++){
-			  	
+			  	debugger;
 			  var m = L.marker( [geojsonLayer[i].latitude, geojsonLayer[i].longitude]);
 
   			markerClusters.addLayer( m );
