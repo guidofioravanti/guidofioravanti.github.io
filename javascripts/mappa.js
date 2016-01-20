@@ -44,13 +44,25 @@ function mappa51(){
 	    		style: function(feature){
 	    			
 			    	if(parseFloat(feature.properties.normale)<= 500){
-		   				return {fillColor: "#ABA123"};
+		   				return {fillColor: "#fff7fb"};
 		       	    	}else if(feature.properties.normale > 500 && feature.properties.normale<=1000) {
-		    				return {fillColor: "#A12AA2"};
-			    	}else{
-		    				return {fillColor: "#212AA2"};	    		
-			    	}
-	
+		    				return {fillColor: "#ece7f2"};
+			    	}else if(feature.properties.normale > 1000 && feature.properties.normale<=1500){
+		    				return {fillColor: "#d0d1e6"};	    		
+			    	}else if(feature.properties.normale > 1500 && feature.properties.normale<=2000){
+		    				return {fillColor: "#a6bddb"};
+			    	}else if(feature.properties.normale > 2000 && feature.properties.normale<=2500){
+		    				return {fillColor: "#74a9cf"};
+			    	}else if(feature.properties.normale > 2500 && feature.properties.normale<=3000){
+		    				return {fillColor: "#3690c0"};
+			    	}else if(feature.properties.normale > 3000 && feature.properties.normale<=3500){
+		    				return {fillColor: "#0570b0"};
+			    	}else if(feature.properties.normale > 3500 && feature.properties.normale<=4000){
+		    				return {fillColor: "#045a8d"};
+			    	}else if(feature.properties.normale > 4000){
+		    				return {fillColor: "#023858"};
+			    	}	    				
+		    				
 			}, //fine style
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
