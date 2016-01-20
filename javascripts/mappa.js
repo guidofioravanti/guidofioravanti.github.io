@@ -84,7 +84,10 @@ function mappa51(){
 		
 		for(i=0;i< punti.length;i++){
 			  
-			  var m = L.marker( [punti[i].feature.properties.latitude,punti[i].feature.properties.longitude ]);
+			  var m = L.marker( [punti[i].feature.properties.latitude,punti[i].feature.properties.longitude ],{
+			  	title: regione;
+			  });
+			  m.bindPop(title);
 
   			markerClusters.addLayer( m );
 			
