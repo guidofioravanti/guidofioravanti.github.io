@@ -71,11 +71,12 @@ function mappa51(){
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
 	    dataType: 'json',
 	    success: function (response) {
+	    	var numeroPunti=L.geoJson(response).features.length;
 	        geojsonLayer = L.geoJson(response,opzioniPunti).addTo(map1951);
 	        var markerClusters = L.markerClusterGroup();
 		console.log("eccomi");
-		console.log(geojsonLayer.length);
-		for(i=0;i< geojsonLayer.length;i++){
+		console.log(numeroPunti);
+		for(i=0;i< numeroPunti;i++){
 			  	
 			  var m = L.marker( [geojsonLayer[i].latitude, geojsonLayer[i].longitude]);
 
