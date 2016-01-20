@@ -46,7 +46,7 @@ function mappa51(){
 			}	
 		}).addTo(map1951);
 	        map1951.fitBounds(geojsonLayer.getBounds());
-	
+		$("map1951").fadeOut(500);
 	    }
 	});
 	
