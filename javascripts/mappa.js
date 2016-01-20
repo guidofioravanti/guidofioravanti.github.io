@@ -10,7 +10,7 @@ var geojsonMarkerOptions = {
 	
 function mappa51(){
 
-	var map1951 = L.map('map1951',crs=L.CRS.EPSG4326).setView([41, 13.5], 6);
+	var map1951 = L.map('map1951',crs=L.CRS.EPSG4326).fitBounds([[36,5],[[48,20]]]);
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
 	
