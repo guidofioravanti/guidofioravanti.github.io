@@ -53,10 +53,10 @@ function mappa51(){
 
 	        var markerClusters = L.markerClusterGroup();	
 
-	    	var geojsonLayer=L.geoJson(response,opzioniPunti);
+	    	var geojsonLayer=L.geoJson(response,opzioniPunti).addTo(map1951);
 
-		markerClusters.addLayer(geojsonLayer);
-	        map1951.addLayer(markerClusters);
+//		markerClusters.addLayer(geojsonLayer);
+//	        map1951.addLayer(markerClusters);
 	    }
 	});
 	
