@@ -2,6 +2,7 @@ var geojsonMarkerOptions = {
 	    radius: 8,
 	    //fillColor: "#ABA123",
 	    weight: 0.7,
+	    color: "#CCC",
 	    opacity: 1,
 	    fillOpacity: 1,
 	    clickable: true
@@ -18,7 +19,7 @@ var opzioniExt={
 	
 	};
 	
-var opzioni= {
+var opzioniPunti= {
 	    		pointToLayer: function(feature, latlng) {
 	    			   	return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
@@ -69,7 +70,7 @@ function mappa51(){
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
 	    dataType: 'json',
 	    success: function (response) {
-	        geojsonLayer = L.geoJson(response,opzioni).addTo(map1951);
+	        geojsonLayer = L.geoJson(response,opzioniPunti).addTo(map1951);
 	        map1951.fitBounds(geojsonLayer.getBounds());
 	    }
 	});
@@ -94,14 +95,7 @@ function mappa61(){
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1961.geojson',
 	    dataType: 'json',
 	    success: function (response) {
-	        geojsonLayer = L.geoJson(response,{
-	    		pointToLayer: function (feature, latlng) {
-	        		return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		},
-	    		onEachFeature: function (feature, layer) {
-				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
-	        	}
-	        }).addTo(map1961);
+	        geojsonLayer = L.geoJson(response,opzioniPunti).addTo(map1961);
 	        map1961.fitBounds(geojsonLayer.getBounds());
 
 	    }
@@ -128,14 +122,7 @@ function mappa71(){
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1971.geojson',
 	    dataType: 'json',
 	    success: function (response) {
-	        geojsonLayer = L.geoJson(response,{
-	    		pointToLayer: function (feature, latlng) {
-	        		return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		},
-	    		onEachFeature: function (feature, layer) {
-				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
-        		}
-		}).addTo(map1971);
+	        geojsonLayer = L.geoJson(response,opzioniPunti).addTo(map1971);
 	        map1971.fitBounds(geojsonLayer.getBounds());
 
 	    }
@@ -165,14 +152,7 @@ function mappa81(){
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1981.geojson',
 	    dataType: 'json',
 	    success: function (response) {
-	        geojsonLayer = L.geoJson(response,{
-	    		pointToLayer: function (feature, latlng) {
-	        		return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		},
-	    		onEachFeature: function (feature, layer) {
-				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
-        		}
-		}).addTo(map1981);
+	        geojsonLayer = L.geoJson(response,opzioniPunti).addTo(map1981);
 	        map1981.fitBounds(geojsonLayer.getBounds());
 
 	    }
