@@ -74,13 +74,14 @@ function mappa51(){
 
 	    	console.log(L.geoJson(response));
 	    	var myGJ=L.geoJson(response,opzioniPunti);
-	    	var numeroPunti= myGJ.getLayers().length;
 	        var geojsonLayer = myGJ.addTo(map1951);
 	        var markerClusters = L.markerClusterGroup();
+	        
+	        var punti= myGJ.getLayers();
 		
-		for(i=0;i< numeroPunti;i++){
-			  	debugger;
-			  var m = L.marker( [geojsonLayer[i].latitude, geojsonLayer[i].longitude]);
+		for(i=0;i< punti.length;i++){
+			  
+			  var m = L.marker( [punti[i].feature.properties.latitude,punti[i].feature.properties.longitude ]);
 
   			markerClusters.addLayer( m );
 			
