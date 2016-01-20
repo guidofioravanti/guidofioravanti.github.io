@@ -51,11 +51,12 @@ function mappa51(){
 	    			   	return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
 	    		style: function(feature){
-	        	    fillColor: switch(feature.properties.normale){
-	    			case <= 2000: return("#000");
-	    			case >= 2001: return("#AAA");
-			     },
-	    		}
+	        	    fillColor: if(feature.properties.normale<= 2000){
+	    				return("#000");
+	        	    }else{
+	    				return("#AAA");
+			    };
+	    		},
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
