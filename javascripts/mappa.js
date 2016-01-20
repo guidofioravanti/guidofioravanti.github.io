@@ -1,8 +1,7 @@
 var geojsonMarkerOptions = {
 	    radius: 8,
 	    //fillColor: "#ABA123",
-	    color: "#000",
-	    weight: 0,
+	    weight: 0.7,
 	    opacity: 1,
 	    fillOpacity: 1,
 	    clickable: true
@@ -19,25 +18,7 @@ var opzioniExt={
 	
 	};
 	
-function mappa51(){
-
-	var map1951 = L.map('map1951',opzioniExt);
-	
-	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
-	
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
-	{
-		maxZoom: 13,
-		id: 'mapbox.light',
-		attribution: 'Elaborazione dati ISPRA',	
-	}).addTo(map1951);
-	
-	$.ajax({
-	    type: "POST",
-	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
-	    dataType: 'json',
-	    success: function (response) {
-	        geojsonLayer = L.geoJson(response,{
+var opzioni= {
 	    		pointToLayer: function(feature, latlng) {
 	    			   	return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
@@ -67,7 +48,28 @@ function mappa51(){
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
-		}).addTo(map1951);
+		}; //fine oggetto	
+	
+	
+function mappa51(){
+
+	var map1951 = L.map('map1951',opzioniExt);
+	
+	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
+	
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	{
+		maxZoom: 13,
+		id: 'mapbox.light',
+		attribution: 'Elaborazione dati ISPRA',	
+	}).addTo(map1951);
+	
+	$.ajax({
+	    type: "POST",
+	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
+	    dataType: 'json',
+	    success: function (response) {
+	        geojsonLayer = L.geoJson(response,opzioni).addTo(map1951);
 	        map1951.fitBounds(geojsonLayer.getBounds());
 	    }
 	});
