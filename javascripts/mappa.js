@@ -1,6 +1,6 @@
-var geojsonMarkerOptionsOrig = {
+var geojsonMarkerOptions = {
 	    radius: 8,
-	    fillColor: "#ABA123",
+	    //fillColor: "#ABA123",
 	    color: "#000",
 	    weight: 1,
 	    opacity: 1,
