@@ -1,13 +1,25 @@
-var geojsonMarkerOptions = {
+var geojsonMarkerOptionsOrig = {
 	    radius: 8,
 	    fillColor: "#ABA123",
 	    color: "#000",
 	    weight: 1,
 	    opacity: 1,
 	    fillOpacity: 0.8,
-	    clickable: true,
-	    riseOnHover: true
+	    clickable: true
 	};	
+	
+var geojsonMarkerOptions = {
+	    radius: 8,
+	    fillColor: switch(feature.properties.normale){
+	    	case <=2000: return("#000");
+	    	case >=2001: return("#AAA");
+	    },
+	    color: "#000",
+	    weight: 1,
+	    opacity: 1,
+	    fillOpacity: 0.8,
+	    clickable: true
+	};		
 	
 // confini per l'Italia
 var bound1= L.latLng(36, 5);
