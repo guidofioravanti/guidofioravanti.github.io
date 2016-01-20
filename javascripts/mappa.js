@@ -21,10 +21,7 @@ var geojsonMarkerOptions = {
 	};
 	
 var opzioniPunti= {
-	    		pointToLayer: function(feature, latlng) {
-	    			   	return L.marker(latlng); //, geojsonMarkerOptions
-	    			   	//return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		},
+
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
