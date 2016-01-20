@@ -72,7 +72,17 @@ function mappa51(){
 	    dataType: 'json',
 	    success: function (response) {
 	        geojsonLayer = L.geoJson(response,opzioniPunti).addTo(map1951);
-	        var myMarkers= new MarkerClusterer(map1951);
+	        var markerClusters = L.markerClusterGroup();
+		
+		for(i=0;i< geojsonLayer.length;i++){
+			
+			  var m = L.marker( [geojsonLayer[i].latitude, geojsonLayer[i].longitude]);
+
+  			markerClusters.addLayer( m );
+			
+		}//fine ciclo for
+		
+	        map1951.addLayer(markerClusters);
 	        map1951.fitBounds(geojsonLayer.getBounds());
 	    }
 	});
