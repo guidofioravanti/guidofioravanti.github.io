@@ -2,7 +2,7 @@ var geojsonMarkerOptions = {
 	    radius: 8,
 	    //fillColor: "#ABA123",
 	    color: "#000",
-	    weight: 1,
+	    weight: 0,
 	    opacity: 1,
 	    fillOpacity: 1,
 	    clickable: true
@@ -44,23 +44,23 @@ function mappa51(){
 	    		style: function(feature){
 	    			
 			    	if(parseFloat(feature.properties.normale)<= 500){
-		   				return {fillColor: "#fff7fb"};
+		   				return {fillColor: "#ffffd9"};
 		       	    	}else if(feature.properties.normale > 500 && feature.properties.normale<=1000) {
-		    				return {fillColor: "#ece7f2"};
+		    				return {fillColor: "#edf8b1"};
 			    	}else if(feature.properties.normale > 1000 && feature.properties.normale<=1500){
-		    				return {fillColor: "#d0d1e6"};	    		
+		    				return {fillColor: "#c7e9b4"};	    		
 			    	}else if(feature.properties.normale > 1500 && feature.properties.normale<=2000){
-		    				return {fillColor: "#a6bddb"};
+		    				return {fillColor: "#7fcdbb"};
 			    	}else if(feature.properties.normale > 2000 && feature.properties.normale<=2500){
-		    				return {fillColor: "#74a9cf"};
+		    				return {fillColor: "#41b6c4"};
 			    	}else if(feature.properties.normale > 2500 && feature.properties.normale<=3000){
-		    				return {fillColor: "#3690c0"};
+		    				return {fillColor: "#1d91c0"};
 			    	}else if(feature.properties.normale > 3000 && feature.properties.normale<=3500){
-		    				return {fillColor: "#0570b0"};
+		    				return {fillColor: "#225ea8"};
 			    	}else if(feature.properties.normale > 3500 && feature.properties.normale<=4000){
-		    				return {fillColor: "#045a8d"};
+		    				return {fillColor: "#253494"};
 			    	}else if(feature.properties.normale > 4000){
-		    				return {fillColor: "#023858"};
+		    				return {fillColor: "#081d58"};
 			    	}	    				
 		    				
 			}, //fine style
