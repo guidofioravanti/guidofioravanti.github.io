@@ -77,8 +77,7 @@ function mappa51(){
 	    	var geojsonLayer=L.geoJson(response,opzioniPunti).addTo(map1951);
 
 	        var markerClusters = L.markerClusterGroup({
-	        	showCoverageOnHover: false, 
-			disableClusteringAtZoom: 20	        	
+	        	showCoverageOnHover: false
 	        });
 	        
 	        map1951.addLayer(markerClusters);
