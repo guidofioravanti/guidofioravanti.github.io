@@ -88,7 +88,7 @@ function mappa61(){
 
 function mappa71(){
 
-	var map1971 = L.map('map1971').setView([41, 13.5], 10);
+	var map1971 = L.map('map1971',opzioniExt);
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1981);
 	
@@ -123,7 +123,7 @@ function mappa71(){
 
 function mappa81(){
 
-	var map1981 = L.map('map1981').setView([41, 13.5], 6);
+	var map1981 = L.map('map1981', opzioniExt);
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1981);
 	
