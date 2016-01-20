@@ -73,9 +73,10 @@ function mappa51(){
 	    success: function (response) {
 	        geojsonLayer = L.geoJson(response,opzioniPunti).addTo(map1951);
 	        var markerClusters = L.markerClusterGroup();
-		
+		console.log("eccomi");
+		console.log(geojsonLayer.length);
 		for(i=0;i< geojsonLayer.length;i++){
-			  console.log(i);	
+			  	
 			  var m = L.marker( [geojsonLayer[i].latitude, geojsonLayer[i].longitude]);
 
   			markerClusters.addLayer( m );
