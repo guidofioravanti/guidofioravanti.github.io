@@ -55,7 +55,17 @@ function mappa51(){
 	    		pointToLayer: function(feature, latlng) {
 	    			   	return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
-	    		style: scegliColore(feature), //fine style
+	    		style: function(feature){
+	    			
+			    	if(parseFloat(x.properties.normale)<= 500){
+		   				return {fillColor: "#ABA123"};
+		       	    	}else if(x.properties.normale > 500 && x.properties.normale<=1000) {
+		    				return {fillColor: "#A12AA2"};
+			    	}else{
+		    				return {fillColor: "#212AA2"};	    		
+			    	}
+	
+			}, //fine style
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
