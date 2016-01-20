@@ -8,13 +8,7 @@ var geojsonMarkerOptionsOrig = {
 	    clickable: true
 	};	
 	
-var geojsonMarkerOptions = {
-	    radius: 8,
-	    weight: 1,
-	    opacity: 1,
-	    fillOpacity: 0.8,
-	    clickable: true
-	};		
+		
 	
 // confini per l'Italia
 var bound1= L.latLng(36, 5);
@@ -50,12 +44,14 @@ function mappa51(){
 	    			   	return L.circleMarker(latlng, geojsonMarkerOptions);
 	    		},
 	    		style: function(feature){
-	        	    if(parseFloat(feature.properties.normale)<= 2000){
-	    				return {fillColor: "#000"};
-	        	    }else{
-	    				return {fillColor: "#AAA"};
-			    }
-	    		},
+	        	    fillColor: function(){
+	        	    		if(parseFloat(feature.properties.normale)<= 2000){
+	    					return "#000";
+	        	    		}else{
+	    					return "#AAA";
+			    		}
+	        	    	} // fine function su feature
+	    		}, //fine style
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
