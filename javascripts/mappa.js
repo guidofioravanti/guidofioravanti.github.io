@@ -56,7 +56,7 @@ var opzioniPunti= {
 	
 function mappa51(){
 
-	var map1951 = L.map('map1951',opzioniExt);
+	var map1951 = L.map('map1951').setView([41, 13.5], 6);
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
 	
@@ -72,13 +72,18 @@ function mappa51(){
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
 	    dataType: 'json',
 	    success: function (response) {
-
-	        var markerClusters = L.markerClusterGroup();	
-
-	    	var geojsonLayer=L.geoJson(response,opzioniPunti).addTo(map1951);
-		map1951.fitBounds(geojsonLayer.getBounds());
-//		markerClusters.addLayer(geojsonLayer);
-//	        map1951.addLayer(markerClusters.getBounds());
+	    	var myCluster=L.markerClusterGroup();
+	        var geojsonLayer = L.geoJson(response,{
+	    		pointToLayer: function(feature, latlng) {
+	    			   	return L.marker(latlng);
+	    		},
+	    		onEachFeature: function (feature, layer) {
+				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
+			}	
+		});
+		myCluster.addLayer(geojsonLayer);
+		map1951.addLayer(myCluster);
+	        map1951.fitBounds(myCluster.getBounds());
 	    }
 	});
 	
