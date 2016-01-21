@@ -53,7 +53,7 @@ function mappa51(){
 
 	        var markerClusters = L.markerClusterGroup();	
 
-	    	var geojsonLayer=L.geoJson(response,opzioniPunti).addTo(map1951);
+	    	var geojsonLayer=L.geoJson(response,opzioniPunti);
 //		map1951.fitBounds(geojsonLayer.getBounds());
 		markerClusters.addLayer(geojsonLayer);
 	        map1951.addLayer(markerClusters.getBounds());
