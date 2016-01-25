@@ -146,7 +146,7 @@ function mappa71(){
 	
 	$.ajax({
 	    type: "POST",
-	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1961.geojson',
+	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1971.geojson',
 	    dataType: 'json',
 	    success: function (response) {
 	        var myCluster=L.markerClusterGroup();
