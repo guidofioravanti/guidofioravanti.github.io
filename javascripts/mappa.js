@@ -52,6 +52,9 @@ var opzioniPunti= {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
 		}; //fine oggetto opzioni	
+
+// link del layer per la mappa
+linkLayer<-'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ'
 	
 	
 function mappa51(){
@@ -60,7 +63,7 @@ function mappa51(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
 	
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	L.tileLayer(linkLayer, 
 	{
 		maxZoom: 13,
 		id: 'mapbox.light',
@@ -98,7 +101,7 @@ function mappa61(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
 	
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	L.tileLayer(linkLayer, 
 	{
 		maxZoom: 13,
 		id: 'mapbox.light',
@@ -137,7 +140,7 @@ function mappa71(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
 	
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	L.tileLayer(linkLayer, 
 	{
 		maxZoom: 13,
 		id: 'mapbox.light',
@@ -174,7 +177,7 @@ function mappa81(){
 
 	var map1981 = L.map('map1981').setView([41, 13.5], 6);
 	
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
+	L.tileLayer(linkLayer, 
 	{
 		maxZoom: 13,
 		id: 'mapbox.light',
