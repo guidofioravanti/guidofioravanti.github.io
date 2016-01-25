@@ -74,6 +74,13 @@
                 text: 'Numero totale di serie'
             }
         },
+        tooltip: {
+          formatter: function () {
+            return '<b>' + this.x + '</b><br/>' +
+                  this.series.name + ': ' + this.y + '<br/>' +
+                  'Total: ' + this.point.stackTotal;
+          }
+        },  
         legend: {
             reversed: true
         },
