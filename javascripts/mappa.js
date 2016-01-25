@@ -113,7 +113,7 @@ function mappa61(){
 	        var myCluster=L.markerClusterGroup();
 	        var geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
-	        		return L.Marker(latlng);
+	        		return L.marker(latlng);
 	    		},
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
@@ -126,7 +126,6 @@ function mappa61(){
 
 	    }
 	});
-	
 
 }
 
