@@ -15,50 +15,44 @@ var linkLayer='https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token
 
 //
 var myAttribution= 'PROVA - Elaborazione dati ISPRA';
-	
+
 function mappa51(){
 
-	var mappaBase=L.tileLayer(linkLayer, 
+	var map1951 = L.map('map1951').setView([41, 13.5], 6);
+	
+	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
+	
+	L.tileLayer(linkLayer, 
 	{
 		maxZoom: 13,
 		id: 'mapbox.light',
 		attribution: myAttribution,	
-	});
-
+	}).addTo(map1961);
 	
 	$.ajax({
 	    type: "POST",
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
 	    dataType: 'json',
 	    success: function (response) {
-	    	var myCluster=L.markerClusterGroup();
+	        var myCluster=L.markerClusterGroup();
 	        var geojsonLayer = L.geoJson(response,{
-	    		pointToLayer: function(feature, latlng) {
-	    			   	return L.marker(latlng);
+	    		pointToLayer: function (feature, latlng) {
+	        		return L.marker(latlng);
 	    		},
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
-			}	
-		});
-		
-		var map1951 = L.map('map1951',{
-			layers: [mappaBase,geosonLayer]
-		}).setView([41, 13.5], 6);
-		
-		var baseMaps={"Grayscale": mappaBase};
-		var overlayMaps={"WMO": geosonLayer}
-		
-		L.control.layers(baseMaps, overlayMaps).addTo(map1951);
-		
-		//myCluster.addLayer(geojsonLayer);
+	        	}
+	        });
+	        
+		myCluster.addLayer(geojsonLayer);
 		map1951.addLayer(myCluster);
-	        map1951.fitBounds(myCluster.getBounds());
+	        map1951.fitBounds(myCluster.getBounds());	        
+
 	    }
 	});
-	
 
 }
-
+	
 
 
 function mappa61(){
