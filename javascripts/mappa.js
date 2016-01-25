@@ -9,53 +9,12 @@ var opzioniExt={
 	
 	};
 
-//opzioni Markers
-var geojsonMarkerOptions = {
-	    radius: 8,
-	    //fillColor: "#ABA123",
-	    weight: 0.7,
-	    color: "#CCC",
-	    opacity: 1,
-	    fillOpacity: 1,
-	    clickable: true
-	};
-	
-var opzioniPunti= {
-		    	pointToLayer: function(feature, latlng) {
-	    			   	return L.circleMarker(latlng, geojsonMarkerOptions);
-	    		},
-	    		style: function(feature){
-	    			
-			    	if(parseFloat(feature.properties.normale)<= 500){
-		   				return {fillColor: "#ffffd9"};
-		       	    	}else if(feature.properties.normale > 500 && feature.properties.normale<=1000) {
-		    				return {fillColor: "#edf8b1"};
-			    	}else if(feature.properties.normale > 1000 && feature.properties.normale<=1500){
-		    				return {fillColor: "#c7e9b4"};	    		
-			    	}else if(feature.properties.normale > 1500 && feature.properties.normale<=2000){
-		    				return {fillColor: "#7fcdbb"};
-			    	}else if(feature.properties.normale > 2000 && feature.properties.normale<=2500){
-		    				return {fillColor: "#41b6c4"};
-			    	}else if(feature.properties.normale > 2500 && feature.properties.normale<=3000){
-		    				return {fillColor: "#1d91c0"};
-			    	}else if(feature.properties.normale > 3000 && feature.properties.normale<=3500){
-		    				return {fillColor: "#225ea8"};
-			    	}else if(feature.properties.normale > 3500 && feature.properties.normale<=4000){
-		    				return {fillColor: "#253494"};
-			    	}else if(feature.properties.normale > 4000){
-		    				return {fillColor: "#081d58"};
-			    	}	    				
-		    				
-			}, //fine style
-
-	    		onEachFeature: function (feature, layer) {
-				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
-			}	
-		}; //fine oggetto opzioni	
 
 // link del layer per la mappa
 var linkLayer='https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ';
-	
+
+//
+var myAttribution= 'PROVA - Elaborazione dati ISPRA';
 	
 function mappa51(){
 
@@ -67,7 +26,7 @@ function mappa51(){
 	{
 		maxZoom: 13,
 		id: 'mapbox.light',
-		attribution: 'Elaborazione dati ISPRA',	
+		attribution: myAttribution,	
 	}).addTo(map1951);
 	
 	$.ajax({
@@ -105,7 +64,7 @@ function mappa61(){
 	{
 		maxZoom: 13,
 		id: 'mapbox.light',
-		attribution: 'Elaborazione dati ISPRA',	
+		attribution: myAttribution,	
 	}).addTo(map1961);
 	
 	$.ajax({
@@ -144,7 +103,7 @@ function mappa71(){
 	{
 		maxZoom: 13,
 		id: 'mapbox.light',
-		attribution: 'Elaborazione dati ISPRA',	
+		attribution: myAttribution,	
 	}).addTo(map1971);
 	
 	$.ajax({
@@ -181,7 +140,7 @@ function mappa81(){
 	{
 		maxZoom: 13,
 		id: 'mapbox.light',
-		attribution: 'Elaborazione dati ISPRA',	
+		attribution: myAttribution,	
 	}).addTo(map1981);
 	
 	$.ajax({
