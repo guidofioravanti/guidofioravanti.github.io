@@ -18,16 +18,13 @@ var myAttribution= 'PROVA - Elaborazione dati ISPRA';
 	
 function mappa51(){
 
-	var map1951 = L.map('map1951').setView([41, 13.5], 6);
-	
-	//L.tileLayer.provider('OpenTopoMap').addTo(map1951);
-	
-	L.tileLayer(linkLayer, 
+	var mappaBase=L.tileLayer(linkLayer, 
 	{
 		maxZoom: 13,
 		id: 'mapbox.light',
 		attribution: myAttribution,	
-	}).addTo(map1951);
+	});
+
 	
 	$.ajax({
 	    type: "POST",
@@ -43,7 +40,17 @@ function mappa51(){
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 			}	
 		});
-		myCluster.addLayer(geojsonLayer);
+		
+		var map1951 = L.map('map1951',{
+			layers: [mappaBase,geosonLayer]
+		}).setView([41, 13.5], 6);
+		
+		var baseMaps={"Grayscale": mappaBase};
+		var overlayMaps={"WMO": geosonLayer}
+		
+		L.control.layers(baseMaps, overlayMaps).addTo(map1951);
+		
+		//myCluster.addLayer(geojsonLayer);
 		map1951.addLayer(myCluster);
 	        map1951.fitBounds(myCluster.getBounds());
 	    }
