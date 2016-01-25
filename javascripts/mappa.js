@@ -27,7 +27,7 @@ function mappa51(){
 		maxZoom: 13,
 		id: 'mapbox.light',
 		attribution: myAttribution,	
-	}).addTo(map1961);
+	}).addTo(map1951);
 	
 	$.ajax({
 	    type: "POST",
