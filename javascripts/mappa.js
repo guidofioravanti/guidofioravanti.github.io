@@ -142,16 +142,25 @@ function mappa71(){
 		maxZoom: 13,
 		id: 'mapbox.light',
 		attribution: 'Elaborazione dati ISPRA',	
-	}).addTo(map1971);
+	});
 	
 	$.ajax({
 	    type: "POST",
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1971.geojson',
 	    dataType: 'json',
 	    success: function (response) {
-	        geojsonLayer = L.geoJson(response,opzioniPunti).addTo(map1971);
-	        map1971.fitBounds(geojsonLayer.getBounds());
-
+	    	var myCluster=L.markerClusterGroup();	    	
+	        var geojsonLayer = L.geoJson(response,{
+	    		pointToLayer: function(feature, latlng) {
+	    			   	return L.marker(latlng);
+	    		},
+	    		onEachFeature: function (feature, layer) {
+				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
+			}		        	
+	        });
+		myCluster.addLayer(geojsonLayer);
+		map1971.addLayer(myCluster);
+	        map1971.fitBounds(myCluster.getBounds());	        
 	    }
 	});
 	
