@@ -172,9 +172,7 @@ function mappa71(){
 
 function mappa81(){
 
-	var map1981 = L.map('map1981', opzioniExt);
-	
-	//L.tileLayer.provider('OpenTopoMap').addTo(map1981);
+	var map1981 = L.map('map1981').setView([41, 13.5], 6);
 	
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', 
 	{
@@ -183,18 +181,29 @@ function mappa81(){
 		attribution: 'Elaborazione dati ISPRA',	
 	}).addTo(map1981);
 	
-
-
 	$.ajax({
 	    type: "POST",
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1981.geojson',
 	    dataType: 'json',
 	    success: function (response) {
-	        geojsonLayer = L.geoJson(response,opzioniPunti).addTo(map1981);
-	        map1981.fitBounds(geojsonLayer.getBounds());
-
+	    	var myCluster=L.markerClusterGroup();
+	        var geojsonLayer = L.geoJson(response,{
+	    		pointToLayer: function(feature, latlng) {
+	    			   	return L.marker(latlng);
+	    		},
+	    		onEachFeature: function (feature, layer) {
+				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
+			}	
+		});
+		myCluster.addLayer(geojsonLayer);
+		map1981.addLayer(myCluster);
+	        map1981.fitBounds(myCluster.getBounds());
 	    }
 	});
 	
 
 }
+
+
+
+
