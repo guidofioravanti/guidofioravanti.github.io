@@ -144,7 +144,7 @@
       function cambiaUnderline(){
         
         var myId=document.getElemenByID("mya");
-        var pos=myId.indexOf("no");
+        var pos=myId.getAttribute("class").indexOf("no");
         
         if(pos!=-1){
           myId.css("text-decoration","none");
