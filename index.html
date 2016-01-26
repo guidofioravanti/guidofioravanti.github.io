@@ -143,17 +143,17 @@
     
       function cambiaUnderline(){
         
-        var myId=document.getElementById("mya");
-        var myClass=myId.getAttribute("class");
+        var myId=$("#mya");
+        var myClass=myId.attr("class");
         alert(myClass);
         var pos=myClass.indexOf("no");
         
         if(pos!=-1){
           myId.css("text-decoration","none");
-          myId.setAttribute("class","no-underline");
+          myId.attr("class","no-underline");
         }else{
           myId.css("text-decoration","underline");
-          myId.setAttribute("class","underline");
+          myId.attr("class","underline");
         }
         
         return false;
