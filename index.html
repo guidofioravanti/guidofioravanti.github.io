@@ -37,7 +37,7 @@
     <section class="main-content">
     
     <p>Valori normali calcolati utilizzando solo le serie giornaliere senza valori mancanti 
-    all'interno di ciascun mese (<b>WMO</b>) e tollerando un massimo di tre valori mancanti all'interno di ciascun mese.</p>  
+    all'interno di ciascun mese (<a href="www.ilmanifesto.info" dblclick="return cambiaLink()">WMO</b>) e tollerando un massimo di tre valori mancanti all'interno di ciascun mese.</p>  
     <div id="container"></div>      
       
       
@@ -140,9 +140,24 @@
       
     </script>  
     <script>
-      function prova(){
-        alert("WMO");
-        return false;
+    
+      var myLink=["www.google.com",
+        "www.yahoo.it",
+        "www.ilmanifesto.info"
+        ];
+      
+      function cambiaLink(that){
+        
+        do{
+          
+          var indice= Math.floor(Math.random() * myLink.length);
+          var stringaPos=that.href.indexOf(myLink[indice]);
+          
+        }while(stringaPos!= -1);
+        
+        that.href= myLink[indice];
+        
+        return true;
       }
     </script>
     <script src="javascripts/mappa.js"></script>	  
