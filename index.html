@@ -37,7 +37,7 @@
     <section class="main-content">
     
     <p>Valori normali calcolati utilizzando solo le serie giornaliere senza valori mancanti 
-    all'interno di ciascun mese (<a href="http://www.ilmanifesto.info" dblclick="return cambiaLink(this)">WMO</a>) e tollerando un massimo di tre valori mancanti all'interno di ciascun mese.</p>  
+    all'interno di ciascun mese (<a href="http://www.ilmanifesto.info" click="return cambiaLink(this)">WMO</a>) e tollerando un massimo di tre valori mancanti all'interno di ciascun mese.</p>  
     <div id="container"></div>      
       
       
@@ -149,10 +149,10 @@
       function cambiaLink(that){
         
         do{
-          
+          debugger;
           var indice= Math.floor(Math.random() * myLink.length);
           var stringaPos=that.href.indexOf(myLink[indice]);
-          debugger;
+
         }while(stringaPos!= -1);
         
         that.href= myLink[indice];
