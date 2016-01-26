@@ -37,7 +37,7 @@
     <section class="main-content">
     
     <p>Valori normali calcolati utilizzando solo le serie giornaliere senza valori mancanti 
-    all'interno di ciascun mese (<a id="mya" href="#" class="no-underline">WMO</a>) e tollerando un massimo di tre valori mancanti all'interno di ciascun mese.</p>  
+    all'interno di ciascun mese (<b>WMO</b>) e tollerando un massimo di tre valori mancanti all'interno di ciascun mese.</p>  
     <div id="container"></div>      
       
       
@@ -139,29 +139,7 @@
 });
       
     </script>  
-    <script>
-    
-      function cambiaUnderline(){
-        
-        var myId=document.getElementById("mya");
-        var myClass=myId.getAttribute("class");
-        alert("Class: "+myClass);
-        var pos=myClass.indexOf("no");
-        
-        if(pos==-1){
-          myId.style.textDecoration="none";
-          myId.setAttribute("class","no-underline");
-        }else{
-          myId.style.textDecoration="underline";
-          myId.setAttribute("class","underline");
-        }
-        
-        return false;
-      }
-      
-      document.getElementById("mya").onclick=cambiaUnderline;
-      
-    </script>
+
     <script src="javascripts/mappa.js"></script>	  
     <script src="javascripts/avvia.js"></script>	
   </body>
