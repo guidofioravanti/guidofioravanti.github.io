@@ -37,7 +37,7 @@
     <section class="main-content">
     
     <p>Valori normali calcolati utilizzando solo le serie giornaliere senza valori mancanti 
-    all'interno di ciascun mese (<a id="mya" href="http://www.ilmanifesto.info" onclick="return cambiaColore()">WMO</a>) e tollerando un massimo di tre valori mancanti all'interno di ciascun mese.</p>  
+    all'interno di ciascun mese (<a id="mya" href="#" onclick="return cambiaUnderline()" class="underline">WMO</a>) e tollerando un massimo di tre valori mancanti all'interno di ciascun mese.</p>  
     <div id="container"></div>      
       
       
@@ -141,12 +141,19 @@
     </script>  
     <script>
     
-      function cambiaColore(){
+      function cambiaUnderline(){
         
-        var colori=["#ABA","#123","#321"];
+        var myId=document.getElemenById("mya");
+        var pos=myId.indexOf("no");
         
-        //alert(document.getElementById("mya").childNodes[0].nodeValue);
-        alert($("#mya").css("text-decoration","underline"));
+        if(pos!=-1){
+          myId.css("text-decoration","none");
+          myId.setAttribute("class","no-underline");
+        }else{
+          myId.css("text-decoration","underline");
+          myId.setAttribute("class","underline");
+        }
+        
         return false;
       }
     </script>
