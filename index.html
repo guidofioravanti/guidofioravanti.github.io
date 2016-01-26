@@ -37,7 +37,7 @@
     <section class="main-content">
     
     <p>Valori normali calcolati utilizzando solo le serie giornaliere senza valori mancanti 
-    all'interno di ciascun mese (<a href="http://www.ilmanifesto.info" onclick="return cambiaLink(this)">WMO</a>) e tollerando un massimo di tre valori mancanti all'interno di ciascun mese.</p>  
+    all'interno di ciascun mese (<a id="mya" href="http://www.ilmanifesto.info" onclick="return cambiaColore()">WMO</a>) e tollerando un massimo di tre valori mancanti all'interno di ciascun mese.</p>  
     <div id="container"></div>      
       
       
@@ -141,21 +141,12 @@
     </script>  
     <script>
     
-      var myLink=["http://www.google.com",
-        "http://www.yahoo.it",
-        "http://www.ilmanifesto.info"
-        ];
-      
-      function cambiaLink(that){
+      function cambiaColore(){
         
-        do{
-
-          var indice= Math.floor(Math.random() * myLink.length);
-          var stringaPos=that.href.indexOf(myLink[indice]);
-
-        }while(stringaPos!= -1);
+        var colori=["#ABA","#123","#321"];
         
-        that.href= myLink[indice];
+        alert(document.getElementById("my").childNodes[0].nodeValue);
+        
         return false;
       }
     </script>
