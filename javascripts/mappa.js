@@ -66,8 +66,9 @@ function mappa61(){
 	L.tileLayer(linkLayer, 
 	{
 		maxZoom: 13,
-		id: 'mapbox.light',
-		attribution: myAttribution,	
+		id: 'guidofioravanti.p4nk36fp',
+		attribution: myAttribution,
+		accessToken: 'pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg'
 	}).addTo(map1961);
 	
 	$.ajax({
@@ -105,8 +106,9 @@ function mappa71(){
 	L.tileLayer(linkLayer, 
 	{
 		maxZoom: 13,
-		id: 'mapbox.light',
-		attribution: myAttribution,	
+		id: 'guidofioravanti.p4nk36fp',
+		attribution: myAttribution,
+		accessToken: 'pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg'
 	}).addTo(map1971);
 	
 	$.ajax({
@@ -142,8 +144,9 @@ function mappa81(){
 	L.tileLayer(linkLayer, 
 	{
 		maxZoom: 13,
-		id: 'mapbox.light',
-		attribution: myAttribution,	
+		id: 'guidofioravanti.p4nk36fp',
+		attribution: myAttribution,
+		accessToken: 'pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg'	
 	}).addTo(map1981);
 	
 	$.ajax({
