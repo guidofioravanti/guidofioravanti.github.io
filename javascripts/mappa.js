@@ -23,14 +23,17 @@ function mappa51(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
 	
-	L.tileLayer(linkLayer, 
+/*	L.tileLayer(linkLayer, 
 	{
 		maxZoom: 13,
 		id: 'guidofioravanti.p4nk36fp',
 		attribution: myAttribution,
 		accessToken: 'pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg'
 	}).addTo(map1951);
-	
+*/
+
+	L.tileLayer().addTo(map1951);
+
 	$.ajax({
 	    type: "POST",
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
