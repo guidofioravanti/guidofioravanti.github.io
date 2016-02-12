@@ -32,7 +32,7 @@ function mappa51(){
 	}).addTo(map1951);
 */
 
-	L.tileLayer.provide('MapBox',{
+	L.tileLayer.provider('MapBox',{
 		id: 'guidofioravanti.p4nk36fp',
 		accessToken: 'pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg'		
 	}).addTo(map1951);
