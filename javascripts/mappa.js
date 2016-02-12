@@ -12,7 +12,7 @@ var opzioniExt={
 
 // link del layer per la mappa
 //var linkLayer='https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ';
-var linkLayer='https://a.tiles.mapbox.com/v4/guidofioravanti.p4nk36fp/page.html?access_token=pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psaTdmYjAwNG53MGxzdGQ0bDJmdzgifQ.x-m1E7Ef7dz0ga9xG7VW5w#10/41.4036/15.2559';
+var linkLayer='https://a.tiles.mapbox.com/v4/{id}/page.html?access_token={accessToken}';
 
 //
 var myAttribution= 'PROVA - Elaborazione dati ISPRA';
