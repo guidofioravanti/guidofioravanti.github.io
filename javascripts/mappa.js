@@ -22,19 +22,13 @@ function mappa51(){
 	var map1951 = L.map('map1951').setView([41, 13.5], 6);
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
-	
-/*	L.tileLayer(linkLayer, 
-	{
-		maxZoom: 13,
-		id: 'guidofioravanti.p4nk36fp',
-		attribution: myAttribution,
-		accessToken: 'pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg'
-	}).addTo(map1951);
-*/
+
+	var myID='guidofioravanti.p4nk36fp';
+	var myToken='pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg';
 
 	L.tileLayer.provider('MapBox',{
-		id: 'guidofioravanti.p4nk36fp',
-		accessToken: 'pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg'		
+		id: myID,
+		accessToken: myToken		
 	}).addTo(map1951);
 
 	$.ajax({
@@ -69,12 +63,9 @@ function mappa61(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
 	
-	L.tileLayer(linkLayer, 
-	{
-		maxZoom: 13,
-		id: 'guidofioravanti.p4nk36fp',
-		attribution: myAttribution,
-		accessToken: 'pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg'
+	L.tileLayer.provider('MapBox',{
+		id: myID,
+		accessToken: myToken		
 	}).addTo(map1961);
 	
 	$.ajax({
@@ -109,12 +100,9 @@ function mappa71(){
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
 	
-	L.tileLayer(linkLayer, 
-	{
-		maxZoom: 13,
-		id: 'guidofioravanti.p4nk36fp',
-		attribution: myAttribution,
-		accessToken: 'pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg'
+	L.tileLayer.provider('MapBox',{
+		id: myID,
+		accessToken: myToken		
 	}).addTo(map1971);
 	
 	$.ajax({
@@ -147,12 +135,9 @@ function mappa81(){
 
 	var map1981 = L.map('map1981').setView([41, 13.5], 6);
 	
-	L.tileLayer(linkLayer, 
-	{
-		maxZoom: 13,
-		id: 'guidofioravanti.p4nk36fp',
-		attribution: myAttribution,
-		accessToken: 'pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg'	
+	L.tileLayer.provider('MapBox',{
+		id: myID,
+		accessToken: myToken		
 	}).addTo(map1981);
 	
 	$.ajax({
