@@ -11,8 +11,8 @@ var opzioniExt={
 
 
 // link del layer per la mappa
-//var linkLayer='https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ';
-var linkLayer='https://a.tiles.mapbox.com/v4/{id}/page.html?access_token={accessToken}';
+var myID='guidofioravanti.p4nk36fp';
+var myToken='pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg';
 
 //
 var myAttribution= 'PROVA - Elaborazione dati ISPRA';
@@ -22,9 +22,6 @@ function mappa51(){
 	var map1951 = L.map('map1951').setView([41, 13.5], 6);
 	
 	//L.tileLayer.provider('OpenTopoMap').addTo(map1961);
-
-	var myID='guidofioravanti.p4nk36fp';
-	var myToken='pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg';
 
 	L.tileLayer.provider('MapBox',{
 		id: myID,
