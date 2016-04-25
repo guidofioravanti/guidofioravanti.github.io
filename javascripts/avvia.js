@@ -43,7 +43,7 @@ window.onload=function(){
 	        	}
 	        }); // chiude geojsonLayer
 
-		      if(mappa.hasLayer(geojsonLayer)) mappa.removeLayer(geosonLayer);
+		      mappa.removeLayer(geojsonLayer);
 		      myCluster.addLayer(geojsonLayer);
 		      mappa.addLayer(myCluster);
 		      mappa.fitBounds(myCluster.getBounds());
