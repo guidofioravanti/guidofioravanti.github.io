@@ -43,7 +43,7 @@ window.onload=function(){
 	        	}
 	        }); // chiude geojsonLayer
 
-		      if(previousMarkers!==null) mappa.removeLayer(previousMarkers);	
+		      if(previousMarkers!==null) {console.log("eccomi"); mappa.removeLayer(previousMarkers);}	
 		      myCluster.addLayer(geojsonLayer);
 		      mappa.addLayer(myCluster);
 		      mappa.fitBounds(myCluster.getBounds());
