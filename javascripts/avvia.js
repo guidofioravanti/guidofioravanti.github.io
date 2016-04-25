@@ -54,8 +54,8 @@ window.onload=function(){
 
   }//fine caricaDati
 
-
-  var anno=document.getElementById("trentennio").addEventListener("change",function(){
+  var elem=document.getElementById("trentennio");
+  elem.addEventListener("change",function(){
 
     year=this.value;
     if(year!=="") caricaDati(year);
