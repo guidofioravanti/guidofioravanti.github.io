@@ -43,12 +43,12 @@ window.onload=function(){
 	        	}
 	        }); // chiude geojsonLayer
 
-		      if(previousMarkers!==null) {console.log("eccomi"); mappa.removeLayer(previousMarkers);}	
+		      if(previousMarkers!==null) {console.log("eccomi"); mappa.removeLayer(previousMarkers); mappa.removeLayer(previousClusters);}	
 		      myCluster.addLayer(geojsonLayer);
 		      mappa.addLayer(myCluster);
 		      mappa.fitBounds(myCluster.getBounds());
 		      previousMarkers=geojsonLayer;
-		
+		      previousClusters=myCluster;	
 	       } //chiude success
 
 	      })// ajax
@@ -58,6 +58,8 @@ window.onload=function(){
   var elemTrentennio=document.getElementById("trentennio");
   
   var previousMarkers=null;
+  var previousClusters=null;
+
   elemTrentennio.addEventListener("change",function(){
 
     year=this.value;
