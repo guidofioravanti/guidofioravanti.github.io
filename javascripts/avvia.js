@@ -14,19 +14,22 @@ window.onload=function(){
   //
   var myAttribution= 'Elaborazione dati ISPRA';
 
-  var mappa = L.map('mappa',{
-    center: [41, 13.5],
-    zoom: 6
-  });
+
+
+
+  var caricaDati=function(year){
+  	
+  	
+ 	var mappa = L.map('mappa',{
+    		center: [41, 13.5],
+    		zoom: 6
+  	});
 
 
 	L.tileLayer.provider('MapBox',{
 		id: myID,
 		accessToken: myToken
 	}).addTo(mappa);
-
-
-  var caricaDati=function(year){
 
      	$.ajax({
 	      type: "GET",
