@@ -55,7 +55,7 @@ window.onload=function(){
   }//fine caricaDati
 
   var elemTrentennio=document.getElementById("trentennio");
-  var elemParametro=document.getElementById("parametri");
+  var elemParametro=document.getElementByName("parametro");
   
   elemTrentennio.addEventListener("change",function(){
 
