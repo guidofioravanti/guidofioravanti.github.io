@@ -27,8 +27,6 @@ window.onload=function(){
 
   var caricaDati=function(year){
 
-	mappa.removeLayer(geojsonLayer);
-  	
      	$.ajax({
 	      type: "GET",
 	      url: "/json/annuali"+year+".geojson",
@@ -45,11 +43,12 @@ window.onload=function(){
 	        	}
 	        }); // chiude geojsonLayer
 
-
+		      if(mappa.hasLayer(previousMarkers)) mappa.removeLayer(previousMarkers);	
 		      myCluster.addLayer(geojsonLayer);
 		      mappa.addLayer(myCluster);
 		      mappa.fitBounds(myCluster.getBounds());
-
+		      previousMarkers=geojsonLayer;
+		
 	       } //chiude success
 
 	      })// ajax
@@ -58,6 +57,7 @@ window.onload=function(){
 
   var elemTrentennio=document.getElementById("trentennio");
   
+  var previousMarkers=NULL;
   elemTrentennio.addEventListener("change",function(){
 
     year=this.value;
