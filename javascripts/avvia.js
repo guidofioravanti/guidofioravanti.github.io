@@ -46,7 +46,7 @@ window.onload=function(){
 		      if(previousMarkers!==null) {console.log("eccomi"); mappa.removeLayer(previousMarkers); mappa.removeLayer(previousClusters);}	
 		      myCluster.addLayer(geojsonLayer);
 		      mappa.addLayer(myCluster);
-		      mappa.fitBounds(myCluster.getBounds());
+		      //mappa.fitBounds(myCluster.getBounds());
 		      previousMarkers=geojsonLayer;
 		      previousClusters=myCluster;	
 	       } //chiude success
