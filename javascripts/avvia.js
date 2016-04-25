@@ -29,7 +29,7 @@ window.onload=function(){
   var caricaDati=function(year){
 
      	$.ajax({
-	      type: "POST",
+	      type: "GET",
 	      url: "/json/annuali"+year+".geojson",
 	      dataType: 'json',
 	      success: function (response) {
