@@ -47,13 +47,20 @@
 
       </h3>
 
-         <select id="trentennio">
+        <form id="parform">
+          <input type="radio" name="parametro" value="pioggia">
+          <input type="radio" name="parametro" value="temperatura">
+        </form>
+
+         <select id="trentennio" form="parform">
            <option value="">--Select--</option>
            <option value="1951">1951-1980</option>
            <option value="1961">1961-1990</option>
            <option value="1971">1971-2000</option>
            <option value="1971">1981-2010</option>
-       </select>
+        </select>
+        
+        <input type="radio">
 
       <div id="mappa" style="width: 100%; height: 500px;"></div>
 
