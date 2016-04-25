@@ -57,7 +57,7 @@ window.onload=function(){
 
   var elemTrentennio=document.getElementById("trentennio");
   
-  var previousMarkers=NULL;
+  var previousMarkers=null;
   elemTrentennio.addEventListener("change",function(){
 
     year=this.value;
