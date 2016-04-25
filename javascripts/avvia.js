@@ -29,7 +29,7 @@ window.onload=function(){
   var caricaDati=function(year){
 
      	$.ajax({
-	      type: "GET",
+	      type: "POST",
 	      url: "https://github.com/guidofioravanti/guidofioravanti.github.io/blob/master/json/annuali"+year+".geojson",
 	      dataType: 'json',
 	      success: function (response) {
