@@ -14,29 +14,25 @@ window.onload=function(){
   //
   var myAttribution= 'Elaborazione dati ISPRA';
 
-
-
-
-  var caricaDati=function(year){
-  	
-  	
- 	var mappa = L.map('mappa',{
+  var mappa = L.map('mappa',{
     		center: [41, 13.5],
     		zoom: 6
   	});
 
-
-	L.tileLayer.provider('MapBox',{
+  L.tileLayer.provider('MapBox',{
 		id: myID,
 		accessToken: myToken
 	}).addTo(mappa);
 
+
+  var caricaDati=function(year){
+  	
      	$.ajax({
 	      type: "GET",
 	      url: "/json/annuali"+year+".geojson",
 	      dataType: 'json',
 	      success: function (response) {
-	    	  console.log("ci sono");
+
 	        var myCluster=L.markerClusterGroup();
 	        var geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
@@ -47,9 +43,10 @@ window.onload=function(){
 	        	}
 	        }); // chiude geojsonLayer
 
+		      if(mappa.hasLayer(geojsonLayer)) mappa.removeLayer(geosonLayer);
 		      myCluster.addLayer(geojsonLayer);
 		      mappa.addLayer(myCluster);
-	        mappa.fitBounds(myCluster.getBounds());
+		      mappa.fitBounds(myCluster.getBounds());
 
 	       } //chiude success
 
