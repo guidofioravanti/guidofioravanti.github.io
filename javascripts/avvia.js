@@ -28,7 +28,7 @@ function mappaStazioni(){
 	    url: 'https://raw.githubusercontent.com/guidofioravanti/guidofioravanti.github.io/master/json/annuali1951.geojson',
 	    dataType: 'json',
 	    success: function (response) {
-	    	alert("ci sono");
+	    	console.log("ci sono");
 	        var myCluster=L.markerClusterGroup();
 	        var geojsonLayer = L.geoJson(response,{
 	    		pointToLayer: function (feature, latlng) {
