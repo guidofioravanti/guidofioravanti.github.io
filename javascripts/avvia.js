@@ -26,6 +26,8 @@ window.onload=function(){
 
 
   var caricaDati=function(year){
+
+	mappa.removeLayer(geojsonLayer);
   	
      	$.ajax({
 	      type: "GET",
@@ -43,7 +45,7 @@ window.onload=function(){
 	        	}
 	        }); // chiude geojsonLayer
 
-		      mappa.removeLayer(geojsonLayer);
+
 		      myCluster.addLayer(geojsonLayer);
 		      mappa.addLayer(myCluster);
 		      mappa.fitBounds(myCluster.getBounds());
