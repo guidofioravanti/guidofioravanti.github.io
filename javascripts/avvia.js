@@ -1,15 +1,10 @@
 window.onload=function(){
 	
 // confini per l'Italia
-var bound1= L.latLng(36, 5);
-var bound2= L.latLng(48,20);
-var italyBounds=L.latLngBounds(bound1, bound2);
-
+var bound1= L.latLng(36, 5), bound2= L.latLng(48,20), italyBounds=L.latLngBounds(bound1, bound2);
+console.log(bound1 + "guido");
 //opzioni mappa
-var opzioniExt={
-	maxBounds: italyBounds
-	
-	};
+var opzioniExt={maxBounds: italyBounds};
 
 
 // link del layer per la mappa
@@ -17,7 +12,7 @@ var myID='guidofioravanti.p4nk36fp';
 var myToken='pk.eyJ1IjoiZ3VpZG9maW9yYXZhbnRpIiwiYSI6ImNpa2psemdiNzAwNHV3am00bWR1a2dibzIifQ.xEkhO1WoLax-PJ_MYyYZIg';
 
 //
-var myAttribution= 'PROVA - Elaborazione dati ISPRA';
+var myAttribution= 'Elaborazione dati ISPRA';
 
 function mappaStazioni(){
 
@@ -41,17 +36,17 @@ function mappaStazioni(){
 	    		onEachFeature: function (feature, layer) {
 				 layer.bindPopup('<b>Nome</b>: '+feature.properties.SiteName.toUpperCase() + '<br><b>Rete</b>: '+feature.properties.regione.toUpperCase()+'<br><b>Normale</b>: '+feature.properties.normale);
 	        	}
-	        });
+	        }); // chiude geojsonLayer
 	        
 		myCluster.addLayer(geojsonLayer);
 		mappa.addLayer(myCluster);
 	        mappa.fitBounds(myCluster.getBounds());	        
 
-	    }
-	});
+	    } //chiude success
+	})// ajax
 
-}
+}//mappa stazioni
 
 
 
-};
+} // window.onload
