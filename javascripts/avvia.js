@@ -30,7 +30,7 @@ window.onload=function(){
 
      	$.ajax({
 	      type: "POST",
-	      url: "https://github.com/guidofioravanti/guidofioravanti.github.io/blob/master/json/annuali"+year+".geojson",
+	      url: "/json/annuali"+year+".geojson",
 	      dataType: 'json',
 	      success: function (response) {
 	    	  console.log("ci sono");
