@@ -55,13 +55,10 @@ window.onload=function(){
   }//fine caricaDati
 
   var elemTrentennio=document.getElementById("trentennio");
-  var elemParametro=document.getElementByName("parametro");
   
   elemTrentennio.addEventListener("change",function(){
 
     year=this.value;
-    parametro=elemParametro.value;
-    console.log(parametro);
     if(year!=="") caricaDati(year);
 
   });
