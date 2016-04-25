@@ -43,16 +43,10 @@
       
       <h3>
         <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true">
-        <span class="octicon octicon-link"></span></a>Mappe dei valori normali</h3>
-
+        <span class="octicon octicon-link"></span></a>Mappe dei valori normali di temperatura media</h3>
       </h3>
 
-        <form id="parametri">
-          <input type="radio" name="parametro" value="pioggia" checked> Pioggia
-          <input type="radio" name="parametro" value="temperatura"> Temperatura
-        </form>
-
-         <select id="trentennio" form="parametri">
+         <select id="trentennio">
            <option value="">--Select--</option>
            <option value="1951">1951-1980</option>
            <option value="1961">1961-1990</option>
@@ -61,90 +55,9 @@
         </select>
         
         <div id="mappa" style="width: 100%; height: 500px;"></div>
-
   
     </section>
-    <script>
-      $(function () {
-    $('#container').highcharts({
-        chart: {
-            type: 'column',
-            zoomType: 'xy'
-        },
-        colors: ['#a63603','#08519c','#e6550d','#3182bd','#fd8d3c','#6baed6','#fdbe85','#bdd7e7'],
-        title: {
-            text: 'Numero di stazioni per trentennio climatologico e per regione'
-        },
-        xAxis: {
-            categories: ["abruzzo","areonautica","bolzano","calabria","emilia","friuli","lazio","liguria","lombardia","marche","sardegna","sicilia","toscana","trentino","umbria"]
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Numero totale di serie'
-            }
-        },
-        tooltip: {
-          formatter: function () {
-            return '<b>' + this.x + '</b><br/>' +
-                  this.series.name + ': ' + this.y + '<br/>' +
-                  'Total: ' + this.point.stackTotal;
-          }
-        },  
-        legend: {
-            reversed: true
-        },
-        plotOptions: {
-            series: {
-                stacking: 'normal'
-            }
-        },
-        series: [
-  {
-    name:   "1951-WMO",
-    data: [ 0,26,42,108,28,63,23,102,47,45,210,79,220,31,33],
-    stack: "strictlyWMO"
-  },
-  {
-    name:   "1951",
-    data: [ 0,38,42,169,38,88,24,105,52,45,210,79,220,31,33],
-    stack: "no_strictlyWMO"
-  },
-  {
-    name:  "1961-WMO",
-    data: [0,32,40,111,30,62,31,78,49,42,189,72,206,31,23],
-    stack: "strictlyWMO"
-  },
-  {
-    name:   "1961",
-    data: [ 0,55,40,140,32,86,31,80,58,42,189,72,206,32,33],
-    stack: "no_strictlyWMO"
-  },  
-  {
-    name: "1971-WMO",
-    data: [ 127,49,39,109, 30,70,22, 60, 27, 40, 182, 64, 157, 26, 0],
-    stack: "strictlyWMO"
-  },
-  {
-    name:   "1971",
-    data: [ 127,76,40,117,36,106,22,61,45,40,182,67,159,27,0],
-    stack: "no_strictlyWMO"
-  },    
-  {
-    name:   "1981-WMO",
-    data: [ 73, 33, 23,42, 24, 34, 13, 0, 0, 34, 164, 39, 11, 1, 0],
-    stack: "strictlyWMO"
-  },
-  {
-    name:   "1981",
-    data: [74,69,23,45,28,67,13,0,0,38,164,42,28,2,0],
-    stack: "no_strictlyWMO"
-  }
-]
-    });
-});
-      
-    </script>  
+ 
     <script src="javascripts/avvia.js"></script>	
   </body>
 </html>
