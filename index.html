@@ -35,14 +35,23 @@
     
       <h3>Mappe dei valori normali di temperatura media</h3>
 
-      <select id="trentennio">
-       <option value="">--Select--</option>
-       <option value="1951">1951-1980</option>
-       <option value="1961">1961-1990</option>
-       <option value="1971">1971-2000</option>
-       <option value="1971">1981-2010</option>
-      </select>
-        
+      <form>
+        <fieldset>
+          <p>
+            <input name="parametro" type="radio" value="Pioggia"/>Pioggia<br/>
+            <input name="parametro" type="radio" value="Tmedia"/>Temperatura media<br/>
+          </p>
+          <p>
+            <select id="trentennio">
+             <option value="">--Select--</option>
+             <option value="1951">1951-1980</option>
+             <option value="1961">1961-1990</option>
+             <option value="1971">1971-2000</option>
+             <option value="1971">1981-2010</option>
+            </select>
+          </p>  
+        </fieldset>
+      </form>  
         <div id="mappa" style="width: 100%; height: 500px;"></div>
   
       </section>
