@@ -60,9 +60,22 @@ $(document).ready(function(){
 
   $("#dataform").change(function(){
 
-    year=$("#trentennio option:selected").val();
+  var year=$("#trentennio option:selected").val();
+  
+  var parametro=$("#nome_parametro");
+  
+  parametro.each(function(){
+    	
+    	if($this.is(":checked")){
+    		$this.prop("checked",false);
+    	}else{
+    		$this.prop("checked",true);
+    	}
+    	
+    });
+    
     //if(year!=="") caricaDati(year);
-    console.log(year);	
+    console.log(year+$("input[type='radio']:checked").val() );	
 
   });
   
