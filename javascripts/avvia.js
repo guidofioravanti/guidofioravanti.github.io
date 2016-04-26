@@ -25,11 +25,11 @@ $(document).ready(function(){
 	}).addTo(mappa);
 
 
-  var caricaDati=function(year){
+  var caricaDati=function(anno,nomeParametro){
 
      	$.ajax({
 	      type: "GET",
-	      url: "/json/annuali"+year+".geojson",
+	      url: "/json/annuali"+anno+".geojson",
 	      dataType: 'json',
 	      success: function (response) {
 
@@ -74,8 +74,7 @@ $(document).ready(function(){
     	
     });
     
-    //if(year!=="") caricaDati(year);
-    console.log(year+$("input[type='radio']:checked").val() );	
+    caricaDati(anno=year,nomeParametro=$("input[type='radio']:checked").val());	
 
   });
   
