@@ -66,10 +66,10 @@ $(document).ready(function(){
   
   parametro.each(function(){
     	
-    	if($this.is(":checked")){
-    		$this.prop("checked",false);
+    	if($(this).is(":checked")){
+    		$(this).prop("checked",false);
     	}else{
-    		$this.prop("checked",true);
+    		$(this).prop("checked",true);
     	}
     	
     });
