@@ -1,4 +1,4 @@
-window.onload=function(){
+$(document).ready(function(){
 
   // confini per l'Italia
   var bound1= L.latLng(36, 5), bound2= L.latLng(48,20), italyBounds=L.latLngBounds(bound1, bound2);
@@ -54,21 +54,18 @@ window.onload=function(){
 	      })// ajax
 
   }//fine caricaDati
-
-  var elemTrentennio=document.getElementById("trentennio");
   
   var previousMarkers=null;
   var previousClusters=null;
 
-  elemTrentennio.addEventListener("change",function(){
+  $("#dataform").change(function(){
 
-    year=this.value;
-    if(year!=="") caricaDati(year);
+    year=$("#trentennio option:selected").val();
+    //if(year!=="") caricaDati(year);
+    console.log(year);	
 
   });
   
-  var prova=document.getElementById("dataform");
-  prova.addEventListener("change",function(){alert("Qualcosa è cambiato");});
 
 
-} // window.onload
+}) //main ready function
