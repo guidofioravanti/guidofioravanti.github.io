@@ -66,6 +66,9 @@ window.onload=function(){
     if(year!=="") caricaDati(year);
 
   });
+  
+  var prova=document.getElementById("dataform");
+  prova.addEventListener("change",function(){alert("Qualcosa è cambiato");});
 
 
 } // window.onload
