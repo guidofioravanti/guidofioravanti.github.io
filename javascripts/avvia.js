@@ -16,7 +16,7 @@ window.onload=function(){
 
   var mappa = L.map('mappa',{
     		center: [41, 13.5],
-    		zoom: 6
+    		zoom: 5
   	});
 
   L.tileLayer.provider('MapBox',{
