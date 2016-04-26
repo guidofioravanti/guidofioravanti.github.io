@@ -29,7 +29,7 @@ $(document).ready(function(){
 
      	$.ajax({
 	      type: "GET",
-	      url: "/json/annuali"+anno+".geojson",
+	      url: "/json/annuali."+anno+"."+nomeParametro+".geojson",
 	      dataType: 'json',
 	      success: function (response) {
 
